@@ -5,17 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Climate Data | The Earth We Leave Behind</title>
+    <title>Climate Data</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
     <nav class="navbar">
 
         <div class="logo">
@@ -24,177 +22,87 @@
 
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="climate-data.html" class="active">
-                Climate Data
-            </a>
+            <a href="climate-data.html">Climate Data</a>
         </div>
 
     </nav>
 
 
-    <!-- HERO -->
-    <section class="data-hero">
+    <main>
 
-        <p class="small-title">
-            CLIMATE CHANGE DATA
-        </p>
+        <section class="data-hero">
 
-        <h1>
-            The Earth Is Changing
-        </h1>
+            <p class="small-title">
+                CLIMATE CHANGE DATA
+            </p>
 
-        <p>
-            Four major environmental indicators,
-            visualised in one graph.
-        </p>
+            <h1>
+                The Earth Is Changing
+            </h1>
 
-    </section>
+            <p>
+                Temperature, sea level, CO₂ emissions and forest loss.
+            </p>
 
-
-    <!-- GRAPH SECTION -->
-    <section class="graph-section">
-
-        <div class="graph-header">
-
-            <div>
-                <p class="section-label">
-                    GLOBAL CLIMATE INDICATORS
-                </p>
-
-                <h2>
-                    Climate Change in One View
-                </h2>
-
-                <p class="description">
-                    This graph compares the relative change of
-                    temperature, sea level, CO₂ emissions and
-                    forest loss over time.
-                </p>
-            </div>
-
-        </div>
+        </section>
 
 
-        <!-- GRAPH -->
-        <div class="graph-card">
+        <section class="graph-section">
 
-            <div class="chart-wrapper">
-                <canvas id="climateChart"></canvas>
-            </div>
+            <p class="section-label">
+                GLOBAL CLIMATE INDICATORS
+            </p>
 
-        </div>
+            <h2>
+                Climate Change in One View
+            </h2>
+
+            <p class="description">
+                A comparison of major environmental indicators
+                over time.
+            </p>
 
 
-        <!-- LEGEND INFORMATION -->
-        <div class="indicator-container">
+            <div class="graph-card">
 
-            <div class="indicator temperature">
-                <span class="indicator-dot"></span>
+                <div class="chart-wrapper">
 
-                <div>
-                    <h3>Temperature</h3>
-                    <p>Global temperature change</p>
+                    <canvas id="climateChart"></canvas>
+
                 </div>
+
             </div>
 
+        </section>
 
-            <div class="indicator sea">
-                <span class="indicator-dot"></span>
-
-                <div>
-                    <h3>Sea Level</h3>
-                    <p>Global sea level rise</p>
-                </div>
-            </div>
+    </main>
 
 
-            <div class="indicator co2">
-                <span class="indicator-dot"></span>
-
-                <div>
-                    <h3>CO₂ Emissions</h3>
-                    <p>Global carbon emissions</p>
-                </div>
-            </div>
-
-
-            <div class="indicator forest">
-                <span class="indicator-dot"></span>
-
-                <div>
-                    <h3>Forest Loss</h3>
-                    <p>Global forest loss</p>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- MESSAGE -->
-    <section class="message-section">
-
-        <p class="section-label">
-            WHAT THE DATA TELLS US
-        </p>
-
-        <h2>
-            Climate change is not one problem.
-        </h2>
-
-        <p>
-            Temperature, rising seas, carbon emissions and
-            forest loss are interconnected indicators of
-            environmental change.
-        </p>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            THE EARTH WE LEAVE BEHIND
-        </p>
-
-        <span>
-            Climate Change & Environmental Sustainability
-        </span>
-
-    </footer>
-
-
-    <!-- GRAPH JAVASCRIPT -->
     <script>
 
-        const ctx = document
-            .getElementById('climateChart');
+        const ctx =
+            document.getElementById("climateChart");
 
 
-        const climateChart = new Chart(ctx, {
+        new Chart(ctx, {
 
-            type: 'line',
+            type: "line",
 
             data: {
 
                 labels: [
-                    '2000',
-                    '2005',
-                    '2010',
-                    '2015',
-                    '2020',
-                    '2025'
+                    "2000",
+                    "2005",
+                    "2010",
+                    "2015",
+                    "2020",
+                    "2025"
                 ],
-
 
                 datasets: [
 
-                    /* TEMPERATURE */
-
                     {
-                        label: 'Temperature',
+                        label: "Temperature",
 
                         data: [
                             100,
@@ -205,27 +113,18 @@
                             267
                         ],
 
-                        borderColor: '#39ff88',
-
-                        backgroundColor:
-                            'rgba(57, 255, 136, 0.08)',
+                        borderColor: "#39ff88",
 
                         borderWidth: 3,
 
-                        pointRadius: 4,
-
-                        pointHoverRadius: 7,
-
                         tension: 0.4,
 
-                        fill: false
+                        pointRadius: 4
+
                     },
 
-
-                    /* SEA LEVEL */
-
                     {
-                        label: 'Sea Level',
+                        label: "Sea Level",
 
                         data: [
                             100,
@@ -236,27 +135,18 @@
                             205
                         ],
 
-                        borderColor: '#38bdf8',
-
-                        backgroundColor:
-                            'rgba(56, 189, 248, 0.08)',
+                        borderColor: "#38bdf8",
 
                         borderWidth: 3,
 
-                        pointRadius: 4,
-
-                        pointHoverRadius: 7,
-
                         tension: 0.4,
 
-                        fill: false
+                        pointRadius: 4
+
                     },
 
-
-                    /* CO2 */
-
                     {
-                        label: 'CO₂ Emissions',
+                        label: "CO₂ Emissions",
 
                         data: [
                             100,
@@ -267,27 +157,18 @@
                             152
                         ],
 
-                        borderColor: '#ff4d6d',
-
-                        backgroundColor:
-                            'rgba(255, 77, 109, 0.08)',
+                        borderColor: "#ff4d6d",
 
                         borderWidth: 3,
 
-                        pointRadius: 4,
-
-                        pointHoverRadius: 7,
-
                         tension: 0.4,
 
-                        fill: false
+                        pointRadius: 4
+
                     },
 
-
-                    /* FOREST */
-
                     {
-                        label: 'Forest Loss',
+                        label: "Forest Loss",
 
                         data: [
                             100,
@@ -298,26 +179,19 @@
                             200
                         ],
 
-                        borderColor: '#f59e0b',
-
-                        backgroundColor:
-                            'rgba(245, 158, 11, 0.08)',
+                        borderColor: "#f59e0b",
 
                         borderWidth: 3,
 
-                        pointRadius: 4,
-
-                        pointHoverRadius: 7,
-
                         tension: 0.4,
 
-                        fill: false
+                        pointRadius: 4
+
                     }
 
                 ]
 
             },
-
 
             options: {
 
@@ -325,113 +199,19 @@
 
                 maintainAspectRatio: false,
 
-
                 interaction: {
 
-                    mode: 'index',
+                    mode: "index",
 
                     intersect: false
 
                 },
 
-
                 plugins: {
 
                     legend: {
 
-                        position: 'top',
-
-                        labels: {
-
-                            color: '#ffffff',
-
-                            padding: 25,
-
-                            usePointStyle: true,
-
-                            font: {
-
-                                size: 13
-
-                            }
-
-                        }
-
-                    },
-
-
-                    tooltip: {
-
-                        backgroundColor:
-                            'rgba(10, 15, 20, 0.95)',
-
-                        titleColor: '#ffffff',
-
-                        bodyColor: '#ffffff',
-
-                        padding: 14,
-
-                        cornerRadius: 10
-
-                    }
-
-                },
-
-
-                scales: {
-
-                    x: {
-
-                        grid: {
-
-                            color:
-                                'rgba(255,255,255,0.07)'
-
-                        },
-
-                        ticks: {
-
-                            color: '#a8b3bd'
-
-                        },
-
-                        title: {
-
-                            display: true,
-
-                            text: 'YEAR',
-
-                            color: '#ffffff'
-
-                        }
-
-                    },
-
-
-                    y: {
-
-                        grid: {
-
-                            color:
-                                'rgba(255,255,255,0.07)'
-
-                        },
-
-                        ticks: {
-
-                            color: '#a8b3bd'
-
-                        },
-
-                        title: {
-
-                            display: true,
-
-                            text: 'RELATIVE CHANGE INDEX',
-
-                            color: '#ffffff'
-
-                        }
+                        position: "top"
 
                     }
 
