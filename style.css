@@ -1349,3 +1349,377 @@ footer p {
     }
 
 }
+
+/* ========================================
+   CLIMATE DATA PAGE
+======================================== */
+
+.data-hero {
+
+    min-height: 55vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px 60px;
+
+}
+
+
+.small-title {
+
+    color: #39ff88;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+
+.data-hero h1 {
+
+    font-size: clamp(45px, 8vw, 90px);
+
+    line-height: 1;
+
+    margin: 0;
+
+    max-width: 1000px;
+
+}
+
+
+.data-hero > p:last-child {
+
+    margin-top: 25px;
+
+    color: #a8b3bd;
+
+    font-size: 18px;
+
+}
+
+
+/* GRAPH SECTION */
+
+.graph-section {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 70px 0 100px;
+
+}
+
+
+.section-label {
+
+    color: #39ff88;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+
+.graph-header h2 {
+
+    font-size: clamp(32px, 5vw, 55px);
+
+    margin: 0 0 15px;
+
+}
+
+
+.description {
+
+    max-width: 700px;
+
+    color: #9ca8b3;
+
+    line-height: 1.7;
+
+}
+
+
+/* GRAPH CARD */
+
+.graph-card {
+
+    margin-top: 45px;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid
+        rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.35);
+
+}
+
+
+.chart-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 550px;
+
+}
+
+
+/* INDICATORS */
+
+.indicator-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+}
+
+
+.indicator {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border: 1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 15px;
+
+}
+
+
+.indicator h3 {
+
+    margin: 0 0 5px;
+
+    font-size: 15px;
+
+}
+
+
+.indicator p {
+
+    margin: 0;
+
+    color: #8e9aa5;
+
+    font-size: 12px;
+
+}
+
+
+.indicator-dot {
+
+    width: 12px;
+
+    height: 12px;
+
+    min-width: 12px;
+
+    border-radius: 50%;
+
+}
+
+
+/* DIFFERENT COLORS */
+
+.temperature .indicator-dot {
+
+    background: #39ff88;
+
+    box-shadow:
+        0 0 12px #39ff88;
+
+}
+
+
+.sea .indicator-dot {
+
+    background: #38bdf8;
+
+    box-shadow:
+        0 0 12px #38bdf8;
+
+}
+
+
+.co2 .indicator-dot {
+
+    background: #ff4d6d;
+
+    box-shadow:
+        0 0 12px #ff4d6d;
+
+}
+
+
+.forest .indicator-dot {
+
+    background: #f59e0b;
+
+    box-shadow:
+        0 0 12px #f59e0b;
+
+}
+
+
+/* MESSAGE */
+
+.message-section {
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 50px auto 120px;
+
+}
+
+
+.message-section h2 {
+
+    font-size:
+        clamp(30px, 5vw, 55px);
+
+    line-height: 1.1;
+
+}
+
+
+.message-section p:last-child {
+
+    color: #9ca8b3;
+
+    line-height: 1.8;
+
+    max-width: 700px;
+
+}
+
+
+/* FOOTER */
+
+footer {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+}
+
+
+footer p {
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+footer span {
+
+    color: #77828d;
+
+    font-size: 13px;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .indicator-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .chart-wrapper {
+
+        height: 400px;
+
+    }
+
+
+    .graph-card {
+
+        padding: 20px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .indicator-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .chart-wrapper {
+
+        height: 350px;
+
+    }
+
+}
