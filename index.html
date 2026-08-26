@@ -69,39 +69,6 @@
 
         <div class="hero-buttons">
 
-           <div class="visitor-message">
-    <p>
-        YOU ARE THE
-        <span id="visitor-count">---</span>
-        <span class="visitor-suffix">TH</span>
-        PERSON TO VISIT THIS WEBSITE.
-    </p>
-</div>
-
-<script>
-fetch("https://api.counterapi.dev/v1/earth-we-leave-behind/visits/up")
-    .then(response => response.json())
-    .then(data => {
-        const count = data.count;
-
-        let suffix = "TH";
-
-        if (count % 100 < 11 || count % 100 > 13) {
-            if (count % 10 === 1) suffix = "ST";
-            else if (count % 10 === 2) suffix = "ND";
-            else if (count % 10 === 3) suffix = "RD";
-        }
-
-        document.getElementById("visitor-count").textContent =
-            count.toLocaleString();
-
-        document.querySelector(".visitor-suffix").textContent = suffix;
-    })
-    .catch(error => {
-        console.log("Visitor counter error:", error);
-    });
-</script> 
-
             <a href="#climate" class="primary-button">
                 EXPLORE THE PROBLEM ↓
             </a>
@@ -111,6 +78,15 @@ fetch("https://api.counterapi.dev/v1/earth-we-leave-behind/visits/up")
             </a>
 
         </div>
+        
+        <!-- VISITOR MESSAGE -->
+<div class="visitor-message">
+    <p>
+        YOU ARE THE
+        <span id="visitor-count">---</span><sup id="visitor-suffix">TH</sup>
+        PERSON TO VISIT THIS WEBSITE.
+    </p>
+</div>
 
     </div>
 
