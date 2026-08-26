@@ -1129,5 +1129,67 @@
 
 <script src="script.js"></script>
 
+    <!-- =========================
+     VISITOR COUNTER SCRIPT
+========================= -->
+
+<script>
+
+fetch("https://api.counterapi.dev/v1/earth-we-leave-behind/visits/up")
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        const count = data.count;
+
+        let suffix = "TH";
+
+
+        // Determine ST / ND / RD / TH
+
+        if (count % 100 < 11 || count % 100 > 13) {
+
+            if (count % 10 === 1) {
+                suffix = "ST";
+            }
+
+            else if (count % 10 === 2) {
+                suffix = "ND";
+            }
+
+            else if (count % 10 === 3) {
+                suffix = "RD";
+            }
+
+        }
+
+
+        // Display visitor number
+
+        document.getElementById("visitor-count").textContent =
+            count.toLocaleString();
+
+
+        // Display suffix
+
+        document.getElementById("visitor-suffix").textContent =
+            suffix;
+
+    })
+
+
+    // If counter fails
+
+    .catch(error => {
+
+        console.log("Visitor counter error:", error);
+
+        document.getElementById("visitor-count").textContent = "---";
+
+    });
+
+</script>
+
 </body>
 </html>
