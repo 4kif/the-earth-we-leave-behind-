@@ -2059,114 +2059,50 @@ footer span {
    VISITOR MESSAGE
 ========================= */
 
-.visitor-message {
-    margin-top: 35px;
-    text-align: center;
-    opacity: 0.65;
+.hero-visitor {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 22px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+
+    color: rgba(255, 255, 255, 0.4);
 }
 
-.visitor-message p {
-    font-size: 12px;
+.hero-visitor strong {
+    color: #7ddc8a;
+    font-weight: 500;
     letter-spacing: 2px;
-    line-height: 1.8;
-    margin: 0;
 }
 
-#visitor-count {
-    font-size: 18px;
-    font-weight: 700;
-    margin: 0 4px;
-    opacity: 1;
+.visitor-dot {
+    width: 5px;
+    height: 5px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #7ddc8a;
+
+    box-shadow: 0 0 8px rgba(125, 220, 138, 0.8);
+
+    animation: visitorPulse 1.5s ease-in-out infinite;
 }
 
-#visitor-suffix {
-    font-size: 10px;
-    font-weight: 600;
-    position: relative;
-    top: -5px;
-}
+@keyframes visitorPulse {
 
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-    .visitor-message {
-        margin-top: 28px;
-        padding: 0 20px;
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
     }
 
-    .visitor-message p {
-        font-size: 10px;
-        letter-spacing: 1.5px;
+    50% {
+        opacity: 0.35;
+        transform: scale(0.8);
     }
-
-    #visitor-count {
-        font-size: 16px;
-    }
-
-    #visitor-suffix {
-        font-size: 8px;
-    }
-
-}
-
-/* =========================
-   VISITOR MESSAGE
-========================= */
-
-.visitor-message {
-    margin-top: 35px;
-    text-align: center;
-    opacity: 0.65;
-}
-
-.visitor-message p {
-    margin: 0;
-    font-size: 12px;
-    letter-spacing: 2px;
-    line-height: 1.8;
-}
-
-#visitor-count {
-    font-size: 18px;
-    font-weight: 700;
-    margin: 0 4px;
-    opacity: 1;
-}
-
-#visitor-suffix {
-    font-size: 10px;
-    font-weight: 600;
-    position: relative;
-    top: -5px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-    .visitor-message {
-        margin-top: 28px;
-        padding: 0 20px;
-    }
-
-    .visitor-message p {
-        font-size: 10px;
-        letter-spacing: 1.5px;
-    }
-
-    #visitor-count {
-        font-size: 16px;
-    }
-
-    #visitor-suffix {
-        font-size: 8px;
-    }
-
 }
