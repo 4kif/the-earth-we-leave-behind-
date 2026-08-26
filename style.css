@@ -1723,3 +1723,334 @@ footer span {
     }
 
 }
+
+/* ========================================
+   OUR TEAM SECTION
+======================================== */
+
+.team-section {
+    min-height: 100vh;
+    padding: 120px 8%;
+    background: #07100c;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.team-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.team-header > span {
+    color: #8fa99a;
+    font-size: 13px;
+    letter-spacing: 4px;
+}
+
+.team-header h2 {
+    font-size: clamp(45px, 7vw, 90px);
+    margin: 12px 0;
+    font-weight: 700;
+}
+
+.team-header h2 span {
+    color: #7cff9b;
+    font-size: inherit;
+    letter-spacing: normal;
+}
+
+.team-header p {
+    color: #a8b5ad;
+    font-size: 16px;
+}
+
+
+/* ========================================
+   TEAM SLIDER
+======================================== */
+
+.team-slider {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 40px;
+}
+
+
+.team-track {
+    width: 650px;
+    min-height: 430px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ========================================
+   TEAM CARD
+======================================== */
+
+.team-card {
+    position: absolute;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 45px;
+
+    opacity: 0;
+
+    transform: translateX(100px) scale(.95);
+
+    pointer-events: none;
+
+    transition:
+        opacity .5s ease,
+        transform .6s cubic-bezier(.22,1,.36,1);
+}
+
+
+.team-card.active {
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        scale(1);
+
+    pointer-events: auto;
+}
+
+
+/* ========================================
+   TEAM IMAGE
+======================================== */
+
+.team-image {
+    width: 280px;
+    height: 360px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(124,255,155,.25);
+
+    background: #101b15;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+}
+
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .6s ease;
+}
+
+
+.team-card:hover .team-image img {
+    transform: scale(1.06);
+}
+
+
+/* ========================================
+   TEAM INFORMATION
+======================================== */
+
+.team-info h3 {
+    font-size: 42px;
+
+    margin: 0 0 8px;
+
+    letter-spacing: 1px;
+}
+
+
+.team-info h4 {
+    color: #7cff9b;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.team-info p {
+    color: #a8b5ad;
+
+    line-height: 1.7;
+
+    max-width: 300px;
+}
+
+
+/* ========================================
+   ARROW BUTTON
+======================================== */
+
+.team-btn {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(124,255,155,.4);
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+
+    z-index: 10;
+}
+
+
+.team-btn:hover {
+    background: #7cff9b;
+
+    color: #07100c;
+
+    transform: scale(1.1);
+}
+
+
+/* ========================================
+   SLIDER DOTS
+======================================== */
+
+.team-dots {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+
+.team-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #405048;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+
+.team-dot.active-dot {
+    width: 28px;
+
+    border-radius: 10px;
+
+    background: #7cff9b;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .team-section {
+        padding: 90px 20px;
+    }
+
+
+    .team-header {
+        margin-bottom: 30px;
+    }
+
+
+    .team-slider {
+        gap: 8px;
+    }
+
+
+    .team-track {
+        width: 100%;
+
+        min-height: 600px;
+    }
+
+
+    .team-card {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 25px;
+    }
+
+
+    .team-image {
+        width: 220px;
+        height: 280px;
+    }
+
+
+    .team-info h3 {
+        font-size: 30px;
+    }
+
+
+    .team-info p {
+        margin: auto;
+    }
+
+
+    .team-btn {
+        width: 45px;
+        height: 45px;
+
+        flex-shrink: 0;
+    }
+
+}
