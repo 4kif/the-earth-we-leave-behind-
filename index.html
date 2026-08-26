@@ -1128,21 +1128,31 @@
      PAGE VIEWS TRACKER
 ========================= -->
 <script>
-fetch("https://hits.sh/4kif.github.io/the-earth-we-leave-behind-.json")
-    .then(response => response.json())
-    .then(data => {
+async function updateVisitorCount() {
+
+    const counter = "the-earth-we-leave-behind";
+
+    try {
+
+        const response = await fetch(
+            `https://api.counterapi.dev/v1/${counter}/visits/up`
+        );
+
+        const data = await response.json();
 
         const count = data.count || 0;
 
         document.getElementById("visitorCount").textContent =
             String(count).padStart(4, "0");
 
-    })
-    .catch(() => {
+    } catch (error) {
 
-        document.getElementById("visitorCount").textContent = "0000";
+        console.log("Visitor counter error:", error);
 
-    });
+    }
+}
+
+updateVisitorCount();
 </script>
 
 </body>
