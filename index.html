@@ -1130,23 +1130,36 @@
 <script src="script.js"></script>
 
     <!-- =========================
-     VISITOR COUNTER SCRIPT
+     PAGE VIEWS TRACKER
+========================= -->
+
+<script
+    src="https://page-views-api.ratneshc.com/script"
+    data-site="4kif.github.io"
+    data-path="/the-earth-we-leave-behind/"
+    defer>
+</script>
+
+
+<!-- =========================
+     GET VISITOR COUNT
 ========================= -->
 
 <script>
 
-fetch("https://api.counterapi.dev/v1/earth-we-leave-behind/visits/up")
+document.addEventListener("DOMContentLoaded", async () => {
 
-    .then(response => response.json())
+    try {
 
-    .then(data => {
+        const response = await fetch(
+            "https://page-views-api.ratneshc.com/api/views?site=4kif.github.io&path=%2Fthe-earth-we-leave-behind%2F"
+        );
 
-        const count = data.count;
+        const data = await response.json();
+
+        const count = data.views || data.count || 0;
 
         let suffix = "TH";
-
-
-        // Determine ST / ND / RD / TH
 
         if (count % 100 < 11 || count % 100 > 13) {
 
@@ -1164,30 +1177,23 @@ fetch("https://api.counterapi.dev/v1/earth-we-leave-behind/visits/up")
 
         }
 
-
-        // Display visitor number
-
         document.getElementById("visitor-count").textContent =
             count.toLocaleString();
-
-
-        // Display suffix
 
         document.getElementById("visitor-suffix").textContent =
             suffix;
 
-    })
+    }
 
+    catch (error) {
 
-    // If counter fails
-
-    .catch(error => {
-
-        console.log("Visitor counter error:", error);
+        console.error("Visitor counter error:", error);
 
         document.getElementById("visitor-count").textContent = "---";
 
-    });
+    }
+
+});
 
 </script>
 
