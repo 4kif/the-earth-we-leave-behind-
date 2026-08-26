@@ -264,3 +264,73 @@ window.addEventListener(
 
     }
 );
+
+/* ========================================
+   OUR TEAM SLIDER
+======================================== */
+
+let currentTeam = 0;
+
+const teamCards =
+    document.querySelectorAll(".team-card");
+
+const teamDots =
+    document.querySelectorAll(".team-dot");
+
+
+function showTeam(index) {
+
+    /* LOOP SLIDER */
+
+    if (index >= teamCards.length) {
+
+        currentTeam = 0;
+
+    }
+
+    else if (index < 0) {
+
+        currentTeam = teamCards.length - 1;
+
+    }
+
+    else {
+
+        currentTeam = index;
+
+    }
+
+
+    /* CHANGE TEAM */
+
+    teamCards.forEach((card, i) => {
+
+        card.classList.toggle(
+            "active",
+            i === currentTeam
+        );
+
+    });
+
+
+    /* CHANGE DOT */
+
+    teamDots.forEach((dot, i) => {
+
+        dot.classList.toggle(
+            "active-dot",
+            i === currentTeam
+        );
+
+    });
+
+}
+
+
+function changeTeam(direction) {
+
+    showTeam(
+        currentTeam + direction
+    );
+
+}
