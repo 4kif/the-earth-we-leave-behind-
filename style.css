@@ -2112,3 +2112,61 @@ footer span {
     }
 
 }
+
+/* =========================
+   VISITOR MESSAGE
+========================= */
+
+.visitor-message {
+    margin-top: 35px;
+    text-align: center;
+    opacity: 0.65;
+}
+
+.visitor-message p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+#visitor-count {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 4px;
+    opacity: 1;
+}
+
+#visitor-suffix {
+    font-size: 10px;
+    font-weight: 600;
+    position: relative;
+    top: -5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .visitor-message {
+        margin-top: 28px;
+        padding: 0 20px;
+    }
+
+    .visitor-message p {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    #visitor-count {
+        font-size: 16px;
+    }
+
+    #visitor-suffix {
+        font-size: 8px;
+    }
+
+}
