@@ -2124,10 +2124,10 @@ footer span {
 }
 
 .visitor-message p {
+    margin: 0;
     font-size: 12px;
     letter-spacing: 2px;
     line-height: 1.8;
-    margin: 0;
 }
 
 #visitor-count {
