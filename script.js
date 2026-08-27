@@ -86,7 +86,7 @@ function updateProgress() {
     const completed =
         document.querySelectorAll(
             '.checklist input[type="checkbox"]:checked'
-        ).length;
+        );
 
 
     const total =
