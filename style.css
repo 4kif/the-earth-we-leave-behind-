@@ -2100,3 +2100,121 @@ footer span {
         opacity: 0.3;
     }
 }
+
+/* =========================
+   CLIMATE CHANGE
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #e5e7eb; /* teks cerah */
+  background: #0b2f26; /* hijau gelap */
+}
+
+/* Section */
+.section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section heading */
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-heading .label {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9dd9c7; /* hijau cerah untuk label */
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.section-heading h2 span {
+  color: #4ade80; /* hijau terang untuk accent */
+}
+
+.section-heading p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #c7d9d0;
+  font-size: 16px;
+}
+
+/* Cards container */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Info card */
+.info-card {
+  background: #124036; /* hijau gelap untuk kad */
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.info-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Card image */
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 12px 0;
+  display: block;
+  background: #1a5a4d; /* placeholder hijau gelap */
+}
+
+.info-card p {
+  font-size: 14px;
+  color: #c7d9d0;
+  line-height: 1.5;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 16px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+  .card-image {
+    height: 150px;
+  }
+}
