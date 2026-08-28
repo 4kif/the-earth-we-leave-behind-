@@ -389,76 +389,309 @@ nav {
    CAUSES
 ========================= */
 
-.dark-section {
-    padding: 130px 8%;
+/* ========================================
+   CAUSES SLIDER
+======================================== */
+
+.causes-slider {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    position: relative;
+}
+
+
+/* ========================================
+   SLIDES WRAPPER
+======================================== */
+
+.slides-wrapper {
+    width: 100%;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: #0b100c;
+}
+
+
+/* ========================================
+   SLIDES
+======================================== */
+
+.slides {
+    display: flex;
+
+    transition: transform 0.6s cubic-bezier(.22, 1, .36, 1);
+
+    width: 100%;
+}
+
+
+/* ========================================
+   INDIVIDUAL SLIDE
+======================================== */
+
+.slide {
+    min-width: 100%;
+
+    padding: 50px;
 
     background: #080b09;
 }
 
 
-.dark-section h2 {
-    color: white;
-}
+/* ========================================
+   SLIDE CONTENT
+======================================== */
 
-
-.dark-section .section-heading > p:last-child {
-    color: #9da59d;
-}
-
-
-.cause-grid {
+.slide-content {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1.3fr 1fr;
 
-    gap: 1px;
+    gap: 70px;
 
-    background: #2b322c;
+    align-items: center;
 
-    border: 1px solid #2b322c;
+    min-height: 420px;
 }
 
 
-.cause {
-    padding: 40px;
+/* ========================================
+   LEFT SIDE
+======================================== */
 
-    min-height: 260px;
-
-    background: #080b09;
-
-    transition: 0.4s;
+.slide-left {
+    position: relative;
 }
 
 
-.cause:hover {
-    background: #101610;
-}
+.cause-number {
+    display: block;
 
-
-.cause span {
     color: #8ccf63;
 
     font-size: 11px;
 
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
 }
 
 
-.cause h3 {
-    margin: 45px 0 15px;
-
+.slide-left h3 {
     font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(35px, 4vw, 65px);
+
+    letter-spacing: -2px;
+
+    color: white;
+
+    margin-bottom: 30px;
 }
 
 
-.cause p {
-    color: #909890;
+/* ========================================
+   IMAGE
+======================================== */
 
-    font-size: 13px;
+.cause-image {
+    width: 100%;
 
-    line-height: 1.7;
+    height: 270px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border: 1px solid rgba(140, 207, 99, 0.25);
+
+    filter: brightness(0.85);
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
 }
 
+
+.slide:hover .cause-image {
+    transform: scale(1.02);
+
+    filter: brightness(1);
+}
+
+
+/* ========================================
+   RIGHT SIDE
+======================================== */
+
+.slide-right {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 100%;
+}
+
+
+.slide-right p {
+    color: #a5ada5;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    max-width: 430px;
+
+    border-left: 2px solid #8ccf63;
+
+    padding-left: 30px;
+}
+
+
+/* ========================================
+   SLIDER BUTTON
+======================================== */
+
+.slider-btn {
+    width: 55px;
+
+    height: 55px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(140, 207, 99, 0.5);
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.slider-btn:hover {
+    background: #8ccf63;
+
+    color: #071006;
+
+    transform: scale(1.08);
+}
+
+
+.slider-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* ========================================
+   RESPONSIVE TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .causes-slider {
+        gap: 15px;
+    }
+
+    .slide {
+        padding: 35px;
+    }
+
+    .slide-content {
+        gap: 40px;
+    }
+
+    .cause-image {
+        height: 230px;
+    }
+
+    .slide-right p {
+        font-size: 14px;
+
+        padding-left: 20px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .causes-slider {
+        gap: 8px;
+    }
+
+    .slider-btn {
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 16px;
+
+        z-index: 10;
+    }
+
+    .slide {
+        padding: 25px 20px;
+    }
+
+    .slide-content {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        min-height: auto;
+    }
+
+    .slide-left h3 {
+        font-size: 38px;
+    }
+
+    .cause-image {
+        height: 220px;
+    }
+
+    .slide-right p {
+        max-width: 100%;
+
+        font-size: 13px;
+
+        line-height: 1.8;
+
+        padding-left: 18px;
+    }
+
+}
 
 /* =========================
    EFFECTS
