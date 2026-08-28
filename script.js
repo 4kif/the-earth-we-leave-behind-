@@ -265,6 +265,90 @@ window.addEventListener(
     }
 );
 
+// ========================================
+// CAUSES SLIDER
+// ========================================
+
+const slides = document.querySelector(".slides");
+const slideItems = document.querySelectorAll(".slide");
+
+const prevButton = document.querySelector(".slider-btn.prev");
+const nextButton = document.querySelector(".slider-btn.next");
+
+let currentSlide = 0;
+const totalSlides = slideItems.length;
+
+
+// FUNCTION UNTUK TUKAR SLIDE
+
+function updateSlider() {
+    slides.style.transform =
+        `translateX(-${currentSlide * 100}%)`;
+}
+
+
+// BUTTON NEXT
+
+nextButton.addEventListener("click", () => {
+
+    currentSlide++;
+
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    }
+
+    updateSlider();
+
+});
+
+
+// BUTTON PREVIOUS
+
+prevButton.addEventListener("click", () => {
+
+    currentSlide--;
+
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    }
+
+    updateSlider();
+
+});
+
+
+// OPTIONAL:
+// GUNA ARROW KEY KEYBOARD
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "ArrowRight") {
+
+        currentSlide++;
+
+        if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        }
+
+        updateSlider();
+
+    }
+
+
+    if (event.key === "ArrowLeft") {
+
+        currentSlide--;
+
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        }
+
+        updateSlider();
+
+    }
+
+});
+
 /* ========================================
    OUR TEAM SLIDER
 ======================================== */
