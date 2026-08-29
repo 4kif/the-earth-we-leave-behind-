@@ -2638,3 +2638,13 @@ footer {
 .section-heading.center {
     transform: translateY(50px);
 }
+
+/* =========================
+   CENTER CAUSES DESCRIPTION
+========================= */
+
+.section-heading.center > p:last-child {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
