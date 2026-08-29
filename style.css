@@ -353,9 +353,12 @@ nav {
 
 .slides-wrapper {
     width: 100%;
+
     overflow: hidden;
-    background: transparent;
-    border: none;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: #0b100c;
 }
 
 
@@ -365,9 +368,10 @@ nav {
 
 .slides {
     display: flex;
-    width: 100%;
 
     transition: transform 0.6s cubic-bezier(.22, 1, .36, 1);
+
+    width: 100%;
 }
 
 
@@ -378,9 +382,9 @@ nav {
 .slide {
     min-width: 100%;
 
-    padding: 10px 0;
+    padding: 50px;
 
-    background: transparent;
+    background: #080b09;
 }
 
 
@@ -397,7 +401,7 @@ nav {
 
     align-items: center;
 
-    min-height: 0;
+    min-height: 420px;
 }
 
 
@@ -419,7 +423,7 @@ nav {
 
     letter-spacing: 3px;
 
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 
@@ -432,7 +436,7 @@ nav {
 
     color: white;
 
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 
@@ -442,6 +446,7 @@ nav {
 
 .cause-image {
     width: 100%;
+
     height: 270px;
 
     object-fit: cover;
@@ -460,6 +465,7 @@ nav {
 
 .slide:hover .cause-image {
     transform: scale(1.02);
+
     filter: brightness(1);
 }
 
@@ -473,7 +479,7 @@ nav {
 
     align-items: center;
 
-    min-height: 0;
+    min-height: 100%;
 }
 
 
@@ -482,15 +488,13 @@ nav {
 
     font-size: 16px;
 
-    line-height: 1.8;
+    line-height: 2;
 
     max-width: 430px;
 
     border-left: 2px solid #8ccf63;
 
     padding-left: 30px;
-
-    margin: 0;
 }
 
 
@@ -500,6 +504,7 @@ nav {
 
 .slider-btn {
     width: 55px;
+
     height: 55px;
 
     flex-shrink: 0;
@@ -519,6 +524,7 @@ nav {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     transition:
@@ -543,7 +549,7 @@ nav {
 
 
 /* ========================================
-   TABLET
+   RESPONSIVE TABLET
 ======================================== */
 
 @media (max-width: 900px) {
@@ -553,7 +559,7 @@ nav {
     }
 
     .slide {
-        padding: 10px 0;
+        padding: 35px;
     }
 
     .slide-content {
@@ -566,6 +572,7 @@ nav {
 
     .slide-right p {
         font-size: 14px;
+
         padding-left: 20px;
     }
 
@@ -584,6 +591,7 @@ nav {
 
     .slider-btn {
         width: 42px;
+
         height: 42px;
 
         font-size: 16px;
@@ -592,7 +600,7 @@ nav {
     }
 
     .slide {
-        padding: 10px 0;
+        padding: 25px 20px;
     }
 
     .slide-content {
