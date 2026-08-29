@@ -379,78 +379,309 @@ font-size: 13px;
 
 }
 
-/* =========================
-CAUSES
-========================= */
+/* ========================================
+   CAUSES SLIDER
+======================================== */
 
-.dark-section {
-padding: 130px 8%;
+.causes-slider {
+    width: 100%;
+    max-width: 1200px;
 
-background: #080b09;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    position: relative;
+}
+
+
+/* ========================================
+   SLIDES WRAPPER
+======================================== */
+
+.slides-wrapper {
+    width: 100%;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: #0b100c;
+}
+
+
+/* ========================================
+   SLIDES
+======================================== */
+
+.slides {
+    display: flex;
+
+    transition: transform 0.6s cubic-bezier(.22, 1, .36, 1);
+
+    width: 100%;
+}
+
+
+/* ========================================
+   INDIVIDUAL SLIDE
+======================================== */
+
+.slide {
+    min-width: 100%;
+
+    padding: 50px;
+
+    background: #080b09;
+}
+
+
+/* ========================================
+   SLIDE CONTENT
+======================================== */
+
+.slide-content {
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    min-height: 420px;
+}
+
+
+/* ========================================
+   LEFT SIDE
+======================================== */
+
+.slide-left {
+    position: relative;
+}
+
+
+.cause-number {
+    display: block;
+
+    color: #8ccf63;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+
+.slide-left h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(35px, 4vw, 65px);
+
+    letter-spacing: -2px;
+
+    color: white;
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   IMAGE
+======================================== */
+
+.cause-image {
+    width: 100%;
+
+    height: 270px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border: 1px solid rgba(140, 207, 99, 0.25);
+
+    filter: brightness(0.85);
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+.slide:hover .cause-image {
+    transform: scale(1.02);
+
+    filter: brightness(1);
+}
+
+
+/* ========================================
+   RIGHT SIDE
+======================================== */
+
+.slide-right {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 100%;
+}
+
+
+.slide-right p {
+    color: #a5ada5;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    max-width: 430px;
+
+    border-left: 2px solid #8ccf63;
+
+    padding-left: 30px;
+}
+
+
+/* ========================================
+   SLIDER BUTTON
+======================================== */
+
+.slider-btn {
+    width: 55px;
+
+    height: 55px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(140, 207, 99, 0.5);
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.slider-btn:hover {
+    background: #8ccf63;
+
+    color: #071006;
+
+    transform: scale(1.08);
+}
+
+
+.slider-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* ========================================
+   RESPONSIVE TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .causes-slider {
+        gap: 15px;
+    }
+
+    .slide {
+        padding: 35px;
+    }
+
+    .slide-content {
+        gap: 40px;
+    }
+
+    .cause-image {
+        height: 230px;
+    }
+
+    .slide-right p {
+        font-size: 14px;
+
+        padding-left: 20px;
+    }
 
 }
 
-.dark-section h2 {
-color: white;
-}
 
-.dark-section .section-heading > p:last-child {
-color: #9da59d;
-}
+/* ========================================
+   MOBILE
+======================================== */
 
-.cause-grid {
-display: grid;
+@media (max-width: 700px) {
 
-grid-template-columns: repeat(3, 1fr);
+    .causes-slider {
+        gap: 8px;
+    }
 
-gap: 1px;
+    .slider-btn {
+        width: 42px;
 
-background: #2b322c;
+        height: 42px;
 
-border: 1px solid #2b322c;
+        font-size: 16px;
 
-}
+        z-index: 10;
+    }
 
-.cause {
-padding: 40px;
+    .slide {
+        padding: 25px 20px;
+    }
 
-min-height: 260px;
+    .slide-content {
+        grid-template-columns: 1fr;
 
-background: #080b09;
+        gap: 30px;
 
-transition: 0.4s;
+        min-height: auto;
+    }
 
-}
+    .slide-left h3 {
+        font-size: 38px;
+    }
 
-.cause:hover {
-background: #101610;
-}
+    .cause-image {
+        height: 220px;
+    }
 
-.cause span {
-color: #8ccf63;
+    .slide-right p {
+        max-width: 100%;
 
-font-size: 11px;
+        font-size: 13px;
 
-letter-spacing: 2px;
+        line-height: 1.8;
 
-}
-
-.cause h3 {
-margin: 45px 0 15px;
-
-font-family: "Space Grotesk", sans-serif;
-
-}
-
-.cause p {
-color: #909890;
-
-font-size: 13px;
-
-line-height: 1.7;
+        padding-left: 18px;
+    }
 
 }
-
 /* =========================
 EFFECTS
 ========================= */
@@ -2073,120 +2304,132 @@ opacity: 1;
 
 }
 
-/* =========================
-CLIMATE CHANGE
-========================= */
+/* =========================================
+   GLOBAL WEBSITE SIZE FIX
+========================================= */
 
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+html {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-line-height: 1.6;
-color: #e5e7eb; /* teks cerah */
-background: #0b2f26; /* hijau gelap */
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
 }
 
-/* Section */
-.section {
-padding: 80px 20px;
-max-width: 1200px;
-margin: 0 auto;
+/* Samakan content width */
+
+.section,
+.dark-section,
+.sustainability-section,
+.data-section,
+.action-section {
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
-/* Section heading */
-.section-heading {
-text-align: center;
-margin-bottom: 60px;
+/* Semua main content guna width yang sama */
+
+.section-heading,
+.cards,
+.cause-grid,
+.impact-list,
+.sustainability-heading,
+.sustainability-grid,
+.sustainability-message,
+.stats,
+.solution-grid,
+.action-content {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.section-heading .label {
-font-size: 14px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: #9dd9c7; /* hijau cerah untuk label */
-margin-bottom: 12px;
+/* Climate Data page */
+
+.data-hero {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
 }
 
-.section-heading h2 {
-font-size: 36px;
-line-height: 1.2;
-margin-bottom: 16px;
-color: #ffffff;
+.graph-section {
+    width: 84%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.section-heading h2 span {
-color: #4ade80; /* hijau terang untuk accent */
+.message-section {
+    width: 84%;
+    max-width: 1400px;
 }
 
-.section-heading p {
-max-width: 700px;
-margin: 0 auto;
-color: #c7d9d0;
-font-size: 16px;
+/* Our Team */
+
+.team-section {
+    width: 100%;
 }
 
-/* Cards container */
-.cards {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-gap: 24px;
+.team-header,
+.team-slider,
+.team-dots {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Info card */
-.info-card {
-background: #124036; /* hijau gelap untuk kad */
-border-radius: 16px;
-padding: 24px;
-text-align: center;
-box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Hero */
+
+.hero {
+    width: 100%;
 }
 
-.info-card:hover {
-transform: translateY(-4px);
-box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+.hero-content {
+    width: 84%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.info-card h3 {
-font-size: 18px;
-margin-bottom: 12px;
-color: #ffffff;
-letter-spacing: 0.5px;
-text-transform: uppercase;
+/* Final section */
+
+.final-content {
+    width: 100%;
+    max-width: 1400px;
 }
 
-/* Card image */
-.card-image {
-width: 100%;
-height: 180px;
-object-fit: cover;
-border-radius: 12px;
-margin: 12px 0;
-display: block;
-background: #1a5a4d; /* placeholder hijau gelap */
+/* Footer */
+
+footer {
+    width: 100%;
 }
 
-.info-card p {
-font-size: 14px;
-color: #c7d9d0;
-line-height: 1.5;
-}
+/* Responsive */
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-.section {
-padding: 60px 16px;
-}
+@media (max-width: 700px) {
 
-.section-heading h2 {
-font-size: 28px;
-}
+    .section,
+    .dark-section,
+    .sustainability-section,
+    .data-section,
+    .action-section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
 
-.card-image {
-height: 150px;
-}
+    .graph-section,
+    .message-section {
+        width: 88%;
+    }
+
+    .hero-content {
+        width: 90%;
+    }
+
 }
