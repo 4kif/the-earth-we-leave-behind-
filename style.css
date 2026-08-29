@@ -2178,3 +2178,133 @@ footer p {
     }
 
 }
+
+/* =========================================
+   GLOBAL WEBSITE SIZE FIX
+========================================= */
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+/* Samakan content width */
+
+.section,
+.dark-section,
+.sustainability-section,
+.data-section,
+.action-section {
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+/* Semua main content guna width yang sama */
+
+.section-heading,
+.cards,
+.cause-grid,
+.impact-list,
+.sustainability-heading,
+.sustainability-grid,
+.sustainability-message,
+.stats,
+.solution-grid,
+.action-content {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Climate Data page */
+
+.data-hero {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.graph-section {
+    width: 84%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message-section {
+    width: 84%;
+    max-width: 1400px;
+}
+
+/* Our Team */
+
+.team-section {
+    width: 100%;
+}
+
+.team-header,
+.team-slider,
+.team-dots {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero */
+
+.hero {
+    width: 100%;
+}
+
+.hero-content {
+    width: 84%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Final section */
+
+.final-content {
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+    .section,
+    .dark-section,
+    .sustainability-section,
+    .data-section,
+    .action-section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .graph-section,
+    .message-section {
+        width: 88%;
+    }
+
+    .hero-content {
+        width: 90%;
+    }
+
+}
