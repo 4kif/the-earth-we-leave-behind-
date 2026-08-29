@@ -321,21 +321,18 @@ nav {
 }
 
 
-/* ==================================================
+/* ========================================
    CAUSES SLIDER
-================================================== */
+======================================== */
 
 .causes-slider {
     width: 100%;
-
     max-width: 1200px;
 
     margin: 0 auto;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     gap: 25px;
@@ -344,43 +341,50 @@ nav {
 }
 
 
-/* Slides wrapper */
+/* ========================================
+   SLIDES WRAPPER
+======================================== */
 
 .slides-wrapper {
     width: 100%;
 
     overflow: hidden;
 
-    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
-    border: none;
+    background: #0b100c;
 }
 
 
-/* Slides */
+/* ========================================
+   SLIDES
+======================================== */
 
 .slides {
     display: flex;
 
-    width: 100%;
+    transition: transform 0.6s cubic-bezier(.22, 1, .36, 1);
 
-    transition:
-        transform 0.6s cubic-bezier(.22,1,.36,1);
+    width: 100%;
 }
 
 
-/* Individual slide */
+/* ========================================
+   INDIVIDUAL SLIDE
+======================================== */
 
 .slide {
     min-width: 100%;
 
-    padding: 50px 0;
+    padding: 50px;
 
-    background: transparent;
+    background: #080b09;
 }
 
 
-/* Slide content */
+/* ========================================
+   SLIDE CONTENT
+======================================== */
 
 .slide-content {
     display: grid;
@@ -395,16 +399,19 @@ nav {
 }
 
 
-/* Left */
+/* ========================================
+   LEFT SIDE
+======================================== */
 
 .slide-left {
     position: relative;
 }
 
+
 .cause-number {
     display: block;
 
-    color: #6da54d;
+    color: #8ccf63;
 
     font-size: 11px;
 
@@ -413,6 +420,7 @@ nav {
     margin-bottom: 20px;
 }
 
+
 .slide-left h3 {
     font-family: "Space Grotesk", sans-serif;
 
@@ -420,13 +428,15 @@ nav {
 
     letter-spacing: -2px;
 
-    color: #101410;
+    color: white;
 
     margin-bottom: 30px;
 }
 
 
-/* Cause image */
+/* ========================================
+   IMAGE
+======================================== */
 
 .cause-image {
     width: 100%;
@@ -437,16 +447,15 @@ nav {
 
     display: block;
 
-    border: none;
+    border: 1px solid rgba(140, 207, 99, 0.25);
 
-    border-radius: 0;
-
-    filter: brightness(0.9);
+    filter: brightness(0.85);
 
     transition:
         transform 0.5s ease,
         filter 0.5s ease;
 }
+
 
 .slide:hover .cause-image {
     transform: scale(1.02);
@@ -455,7 +464,9 @@ nav {
 }
 
 
-/* Right */
+/* ========================================
+   RIGHT SIDE
+======================================== */
 
 .slide-right {
     display: flex;
@@ -465,8 +476,9 @@ nav {
     min-height: 100%;
 }
 
+
 .slide-right p {
-    color: #596159;
+    color: #a5ada5;
 
     font-size: 16px;
 
@@ -474,13 +486,15 @@ nav {
 
     max-width: 430px;
 
-    border-left: 2px solid #6da54d;
+    border-left: 2px solid #8ccf63;
 
     padding-left: 30px;
 }
 
 
-/* Slider buttons */
+/* ========================================
+   SLIDER BUTTON
+======================================== */
 
 .slider-btn {
     width: 55px;
@@ -491,11 +505,11 @@ nav {
 
     border-radius: 50%;
 
-    border: 1px solid #6da54d;
+    border: 1px solid rgba(140, 207, 99, 0.5);
 
     background: transparent;
 
-    color: #101410;
+    color: #ffffff;
 
     font-size: 22px;
 
@@ -513,6 +527,7 @@ nav {
         transform 0.3s ease;
 }
 
+
 .slider-btn:hover {
     background: #8ccf63;
 
@@ -521,11 +536,94 @@ nav {
     transform: scale(1.08);
 }
 
+
 .slider-btn:active {
     transform: scale(0.95);
 }
 
 
+/* ========================================
+   RESPONSIVE TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .causes-slider {
+        gap: 15px;
+    }
+
+    .slide {
+        padding: 35px;
+    }
+
+    .slide-content {
+        gap: 40px;
+    }
+
+    .cause-image {
+        height: 230px;
+    }
+
+    .slide-right p {
+        font-size: 14px;
+
+        padding-left: 20px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .causes-slider {
+        gap: 8px;
+    }
+
+    .slider-btn {
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 16px;
+
+        z-index: 10;
+    }
+
+    .slide {
+        padding: 25px 20px;
+    }
+
+    .slide-content {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        min-height: auto;
+    }
+
+    .slide-left h3 {
+        font-size: 38px;
+    }
+
+    .cause-image {
+        height: 220px;
+    }
+
+    .slide-right p {
+        max-width: 100%;
+
+        font-size: 13px;
+
+        line-height: 1.8;
+
+        padding-left: 18px;
+    }
+
+}
 /* ==================================================
    EFFECTS
 ================================================== */
