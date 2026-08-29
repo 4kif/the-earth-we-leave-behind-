@@ -325,60 +325,257 @@ margin-right: auto;
 CLIMATE CARDS
 ========================= */
 
-.cards {
-display: grid;
+/* =========================
+   CLIMATE CHANGE SECTION
+========================= */
 
-grid-template-columns: repeat(4, 1fr);
+#climate {
+    padding: 110px 8%;
+    background: #f1f3ed;
+    color: #101410;
+}
 
-gap: 18px;
+
+/* =========================
+   CLIMATE HEADING
+========================= */
+
+#climate .section-heading {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+#climate .section-heading .label {
+    color: #6da54d;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+#climate .section-heading h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+#climate .section-heading h2 span {
+    color: #6da54d;
+}
+
+#climate .section-heading > p:last-child {
+    max-width: 650px;
+
+    line-height: 1.7;
+
+    color: #596159;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CLIMATE CARDS
+========================= */
+
+#climate .cards {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================
+   INDIVIDUAL CARD
+========================= */
+
+#climate .info-card {
+    width: 100%;
+
+    min-height: 0;
+
+    padding: 25px;
+
+    background: #f1f3ed;
+
+    border: 1px solid #d9ded8;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* CARD HOVER */
+
+#climate .info-card:hover {
+    transform: translateY(-8px);
+
+    background: #e5ebdf;
+
+    border-color: #8ccf63;
+}
+
+
+/* =========================
+   CARD TITLE
+========================= */
+
+#climate .info-card h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.2;
+
+    margin: 0;
+
+    color: #101410;
+}
+
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+#climate .card-image {
+    width: 100%;
+
+    height: 160px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    margin: 18px 0;
+
+    border-radius: 4px;
+
+    filter: brightness(0.92);
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+/* IMAGE HOVER */
+
+#climate .info-card:hover .card-image {
+    transform: scale(1.03);
+
+    filter: brightness(1);
+}
+
+
+/* =========================
+   CARD DESCRIPTION
+========================= */
+
+#climate .info-card p {
+    color: #606860;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin: 0;
 
 }
 
-.info-card {
-padding: 35px;
 
-min-height: 300px;
+/* =========================
+   TABLET
+========================= */
 
-border: 1px solid #d9ded8;
+@media (max-width: 1100px) {
 
-transition: 0.4s;
+    #climate {
+        padding: 100px 7%;
+    }
 
-}
+    #climate .cards {
+        grid-template-columns: repeat(2, 1fr);
 
-.info-card:hover {
-transform: translateY(-10px);
+        gap: 18px;
+    }
 
-background: #e5ebdf;
-
-border-color: #8ccf63;
-
-}
-
-.card-icon {
-font-size: 35px;
-
-margin-bottom: 60px;
+    #climate .card-image {
+        height: 180px;
+    }
 
 }
 
-.info-card h3 {
-font-family: "Space Grotesk", sans-serif;
 
-font-size: 18px;
+/* =========================
+   MOBILE
+========================= */
 
-margin-bottom: 15px;
+@media (max-width: 700px) {
+
+    #climate {
+        padding: 80px 6%;
+    }
+
+    #climate .section-heading {
+        margin-bottom: 45px;
+    }
+
+    #climate .section-heading h2 {
+        font-size: 45px;
+
+        letter-spacing: -2px;
+    }
+
+    #climate .section-heading > p:last-child {
+        font-size: 13px;
+    }
+
+    #climate .cards {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    #climate .info-card {
+        padding: 22px;
+    }
+
+    #climate .info-card h3 {
+        font-size: 17px;
+    }
+
+    #climate .card-image {
+        height: 190px;
+
+        margin: 16px 0;
+    }
+
+    #climate .info-card p {
+        font-size: 12px;
+
+        line-height: 1.7;
+    }
 
 }
-
-.info-card p {
-color: #606860;
-
-line-height: 1.7;
-
-font-size: 13px;
-
-}
-
 /* ========================================
    CAUSES SLIDER
 ======================================== */
