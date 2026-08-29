@@ -2630,30 +2630,3 @@ footer {
     }
 
 }
-
-/* =========================
-   CAUSES HEADING
-========================= */
-
-.causes-heading {
-    padding-top: 80px;
-}
-
-/* 02 — THE CAUSES */
-.causes-heading .label {
-    margin-bottom: 45px;
-}
-
-/* WE ARE PART OF THE PROBLEM */
-.causes-heading h2 {
-    margin-bottom: 35px;
-}
-
-/* Modern society... */
-.causes-heading > p:last-child {
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    line-height: 1.7;
-}
