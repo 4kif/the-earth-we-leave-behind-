@@ -457,3 +457,58 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(card);
   });
 });
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const menuPanel = document.getElementById("menuPanel");
+
+    if (!menuToggle || !menuPanel) {
+        return;
+    }
+
+    menuToggle.addEventListener("click", function () {
+
+        menuToggle.classList.toggle("active");
+        menuPanel.classList.toggle("active");
+
+    });
+
+
+    /* Tutup menu bila klik mana-mana link */
+
+    const menuLinks = menuPanel.querySelectorAll("a");
+
+    menuLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            menuToggle.classList.remove("active");
+            menuPanel.classList.remove("active");
+
+        });
+
+    });
+
+
+    /* Tutup menu bila klik luar panel */
+
+    document.addEventListener("click", function (event) {
+
+        if (
+            !menuPanel.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ) {
+
+            menuToggle.classList.remove("active");
+            menuPanel.classList.remove("active");
+
+        }
+
+    });
+
+});
