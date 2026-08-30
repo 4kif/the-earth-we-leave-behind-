@@ -13,120 +13,249 @@
 
 <body>
 
-    <!-- BACKGROUND -->
-    <div class="noise"></div>
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
-    <!-- NAV -->
-    <nav class="showcase-nav">
+    <nav>
 
-        <a href="index.html" class="back-link">
-            ← BACK
+        <a href="index.html" class="logo-link">
+            <div class="logo">
+                <img src="logo.png" alt="Earth Logo">
+                <span>EARTH<span class="green">.</span></span>
+            </div>
         </a>
 
-        <div class="nav-logo">
-            EARTH<span>.</span>
-        </div>
+        <div class="nav-right">
 
-        <div class="nav-number">
-            08 / SHOWCASE
+            <span class="page-number">
+                08 / SHOWCASE
+            </span>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
         </div>
 
     </nav>
 
 
-    <!-- MAIN -->
+    <!-- =========================
+         MENU
+    ========================= -->
+
+    <div class="menu-panel" id="menuPanel">
+
+        <div class="menu-label">
+            MENU
+        </div>
+
+        <a href="index.html">
+            <span>01</span>
+            Home
+        </a>
+
+        <a href="team.html">
+            <span>02</span>
+            Our Team
+        </a>
+
+        <a href="contact.html">
+            <span>03</span>
+            Contact
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         SHOWCASE
+    ========================= -->
+
     <main class="showcase">
 
-        <!-- TOP LABEL -->
-        <div class="showcase-label">
-            VISUAL STORIES FROM A CHANGING PLANET
+        <!-- Background -->
+        <div class="background-text">
+            EARTH
         </div>
 
 
-        <!-- EARTH VISUAL -->
-        <div class="earth-stage">
+        <!-- VIDEO -->
 
-            <div class="earth-glow"></div>
+        <div class="video-container">
 
-            <div class="earth">
-                <img
-                    src="earth.jpg"
-                    alt="Planet Earth"
-                >
+            <video
+                id="showcaseVideo"
+                class="showcase-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="showcase-poster.jpg"
+            >
+
+                <source src="showcase-video.mp4" type="video/mp4">
+
+                Your browser does not support the video tag.
+
+            </video>
+
+
+            <!-- Video overlay -->
+
+            <div class="video-overlay"></div>
+
+
+            <!-- Play button -->
+
+            <button class="play-button" id="playButton">
+
+                <span id="playIcon">
+                    ▶
+                </span>
+
+            </button>
+
+
+            <!-- Video label -->
+
+            <div class="video-label">
+                <span class="live-dot"></span>
+                VISUAL STORY
             </div>
 
-            <div class="orbit orbit-one"></div>
-            <div class="orbit orbit-two"></div>
-
         </div>
 
 
-        <!-- TEXT -->
+        <!-- =========================
+             TITLE
+        ========================= -->
+
         <div class="showcase-title">
 
-            <span class="title-small">
-                THE WORLD WE INHERIT
-            </span>
+            <p class="eyebrow">
+                08 — SHOWCASE
+            </p>
 
             <h1>
-                THE EARTH<br>
-                <span>WE LEAVE BEHIND.</span>
+                THE EARTH WE LEAVE
+                <span>BEHIND.</span>
             </h1>
+
+            <p class="description">
+                A visual journey through the changing planet,
+                the consequences of our choices and the future
+                we still have the power to shape.
+            </p>
 
         </div>
 
 
-        <!-- BOTTOM -->
+        <!-- =========================
+             BOTTOM
+        ========================= -->
+
         <div class="showcase-bottom">
 
-            <div class="showcase-counter">
-                <span id="current">01</span>
-                <span class="line"></span>
-                <span>06</span>
-            </div>
+            <div class="progress">
 
+                <span>
+                    01
+                </span>
 
-            <div class="showcase-topics">
+                <div class="progress-line">
+                    <div></div>
+                </div>
 
-                <button class="topic active" data-index="0">
-                    CLIMATE
-                </button>
-
-                <button class="topic" data-index="1">
-                    NATURE
-                </button>
-
-                <button class="topic" data-index="2">
-                    OCEANS
-                </button>
-
-                <button class="topic" data-index="3">
-                    CITIES
-                </button>
-
-                <button class="topic" data-index="4">
-                    PEOPLE
-                </button>
-
-                <button class="topic" data-index="5">
-                    FUTURE
-                </button>
+                <span>
+                    06
+                </span>
 
             </div>
 
 
-            <button class="next-button" id="nextButton">
+            <a href="climate-data.html" class="next-button">
                 NEXT
                 <span>→</span>
-            </button>
+            </a>
 
         </div>
 
     </main>
 
 
-    <script src="showcase.js"></script>
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           HAMBURGER MENU
+        ========================= */
+
+        const menuToggle = document.getElementById("menuToggle");
+        const menuPanel = document.getElementById("menuPanel");
+
+        menuToggle.addEventListener("click", function () {
+
+            menuToggle.classList.toggle("active");
+            menuPanel.classList.toggle("active");
+
+        });
+
+
+        /* =========================
+           VIDEO PLAY / PAUSE
+        ========================= */
+
+        const video = document.getElementById("showcaseVideo");
+        const playButton = document.getElementById("playButton");
+        const playIcon = document.getElementById("playIcon");
+
+        playButton.addEventListener("click", function () {
+
+            if (video.paused) {
+
+                video.play();
+
+                playIcon.textContent = "Ⅱ";
+
+                playButton.classList.add("playing");
+
+            } else {
+
+                video.pause();
+
+                playIcon.textContent = "▶";
+
+                playButton.classList.remove("playing");
+
+            }
+
+        });
+
+
+        /* =========================
+           HIDE PLAY BUTTON WHILE PLAYING
+        ========================= */
+
+        video.addEventListener("play", function () {
+
+            playIcon.textContent = "Ⅱ";
+
+        });
+
+        video.addEventListener("pause", function () {
+
+            playIcon.textContent = "▶";
+
+        });
+
+    </script>
 
 </body>
 </html>
-```
