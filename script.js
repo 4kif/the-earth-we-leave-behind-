@@ -362,90 +362,64 @@ document.addEventListener("keydown", function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    const teamCards = document.querySelectorAll(".team-card");
+    const teamDots = document.querySelectorAll(".team-dot");
+
+    const prevButton = document.querySelector(".team-btn.prev");
+    const nextButton = document.querySelector(".team-btn.next");
+
     let currentTeam = 0;
 
-    const teamCards =
-        document.querySelectorAll(".team-card");
-
-    const teamDots =
-        document.querySelectorAll(".team-dot");
-
-    // Kalau page bukan team.html
+    // Pastikan Team page memang wujud
     if (teamCards.length === 0) {
         return;
     }
 
+    function showTeam(index) {
 
-    /* ========================================
-       SHOW TEAM
-    ======================================== */
-
-    window.showTeam = function (index) {
-
-        // Loop ke member pertama
         if (index >= teamCards.length) {
-
             currentTeam = 0;
-
-        }
-
-        // Loop ke member terakhir
+        } 
         else if (index < 0) {
-
             currentTeam = teamCards.length - 1;
-
-        }
-
-        // Set member
+        } 
         else {
-
             currentTeam = index;
-
         }
 
-
-        /* CHANGE CARD */
-
-        teamCards.forEach(function (card, i) {
-
+        teamCards.forEach((card, i) => {
             card.classList.toggle(
                 "active",
                 i === currentTeam
             );
-
         });
 
-
-        /* CHANGE DOT */
-
-        teamDots.forEach(function (dot, i) {
-
+        teamDots.forEach((dot, i) => {
             dot.classList.toggle(
                 "active-dot",
                 i === currentTeam
             );
-
         });
 
-    };
+    }
 
+    if (prevButton) {
+        prevButton.addEventListener("click", function () {
+            showTeam(currentTeam - 1);
+        });
+    }
 
-    /* ========================================
-       CHANGE TEAM
-    ======================================== */
+    if (nextButton) {
+        nextButton.addEventListener("click", function () {
+            showTeam(currentTeam + 1);
+        });
+    }
 
-    window.changeTeam = function (direction) {
-
-        showTeam(
-            currentTeam + direction
-        );
-
-    };
-
-
-    /* ========================================
-       START FIRST MEMBER
-    ======================================== */
+    teamDots.forEach((dot, index) => {
+        dot.addEventListener("click", function () {
+            showTeam(index);
+        });
+    });
 
     showTeam(0);
 
