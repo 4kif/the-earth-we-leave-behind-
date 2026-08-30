@@ -360,72 +360,96 @@ document.addEventListener("keydown", function (event) {
    OUR TEAM SLIDER
 ======================================== */
 
-let currentTeam = 0;
+document.addEventListener("DOMContentLoaded", function () {
 
-const teamCards =
-    document.querySelectorAll(".team-card");
+    let currentTeam = 0;
 
-const teamDots =
-    document.querySelectorAll(".team-dot");
+    const teamCards =
+        document.querySelectorAll(".team-card");
 
+    const teamDots =
+        document.querySelectorAll(".team-dot");
 
-function showTeam(index) {
-
-    /* LOOP SLIDER */
-
-    if (index >= teamCards.length) {
-
-        currentTeam = 0;
-
-    }
-
-    else if (index < 0) {
-
-        currentTeam = teamCards.length - 1;
-
-    }
-
-    else {
-
-        currentTeam = index;
-
+    // Kalau page bukan team.html
+    if (teamCards.length === 0) {
+        return;
     }
 
 
-    /* CHANGE TEAM */
+    /* ========================================
+       SHOW TEAM
+    ======================================== */
 
-    teamCards.forEach((card, i) => {
+    window.showTeam = function (index) {
 
-        card.classList.toggle(
-            "active",
-            i === currentTeam
+        // Loop ke member pertama
+        if (index >= teamCards.length) {
+
+            currentTeam = 0;
+
+        }
+
+        // Loop ke member terakhir
+        else if (index < 0) {
+
+            currentTeam = teamCards.length - 1;
+
+        }
+
+        // Set member
+        else {
+
+            currentTeam = index;
+
+        }
+
+
+        /* CHANGE CARD */
+
+        teamCards.forEach(function (card, i) {
+
+            card.classList.toggle(
+                "active",
+                i === currentTeam
+            );
+
+        });
+
+
+        /* CHANGE DOT */
+
+        teamDots.forEach(function (dot, i) {
+
+            dot.classList.toggle(
+                "active-dot",
+                i === currentTeam
+            );
+
+        });
+
+    };
+
+
+    /* ========================================
+       CHANGE TEAM
+    ======================================== */
+
+    window.changeTeam = function (direction) {
+
+        showTeam(
+            currentTeam + direction
         );
 
-    });
+    };
 
 
-    /* CHANGE DOT */
+    /* ========================================
+       START FIRST MEMBER
+    ======================================== */
 
-    teamDots.forEach((dot, i) => {
+    showTeam(0);
 
-        dot.classList.toggle(
-            "active-dot",
-            i === currentTeam
-        );
-
-    });
-
-}
-
-
-function changeTeam(direction) {
-
-    showTeam(
-        currentTeam + direction
-    );
-
-}
-
+});
 /* ========================================
    CLIMATE CHANGE
 ======================================== */
