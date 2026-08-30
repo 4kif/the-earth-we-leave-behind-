@@ -1,6 +1,5 @@
 /* =====================================================
-   GET IN TOUCH PAGE
-   THE EARTH WE LEAVE BEHIND
+   GET IN TOUCH — THE EARTH WE LEAVE BEHIND
 ===================================================== */
 
 * {
@@ -25,12 +24,6 @@ a {
     color: inherit;
 }
 
-button,
-input,
-textarea {
-    font-family: inherit;
-}
-
 
 /* =====================================================
    NAVIGATION
@@ -38,7 +31,6 @@ textarea {
 
 .navbar {
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -61,19 +53,13 @@ textarea {
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-
-/* LOGO */
-
 .logo {
     font-family: "Space Grotesk", sans-serif;
 
-    font-size: 13px;
-
+    font-size: 12px;
     line-height: 1.15;
 
     letter-spacing: 2px;
-
-    font-weight: 700;
 
     color: #f1f4ef;
 
@@ -84,15 +70,12 @@ textarea {
     color: #8ccf63;
 }
 
-
-/* BACK BUTTON */
-
 .back-btn {
     padding: 11px 18px;
 
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(140,207,99,0.5);
 
-    color: #c5ccc5;
+    color: #8ccf63;
 
     font-size: 10px;
 
@@ -102,11 +85,8 @@ textarea {
 }
 
 .back-btn:hover {
-    color: #071006;
-
     background: #8ccf63;
-
-    border-color: #8ccf63;
+    color: #071006;
 }
 
 
@@ -116,14 +96,7 @@ textarea {
 
 .contact-page {
     width: 100%;
-
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(140, 207, 99, 0.08),
-            transparent 28%
-        ),
-        #080b09;
+    background: #080b09;
 }
 
 
@@ -132,19 +105,20 @@ textarea {
 ===================================================== */
 
 .contact-hero {
-    min-height: 72vh;
+    width: 84%;
+    max-width: 1400px;
 
-    padding: 180px 8% 90px;
+    margin: 0 auto;
+
+    min-height: 78vh;
+
+    padding-top: 170px;
+    padding-bottom: 80px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    position: relative;
 }
-
-
-/* LABEL */
 
 .hero-label {
     color: #8ccf63;
@@ -156,15 +130,12 @@ textarea {
     margin-bottom: 30px;
 }
 
-
-/* TITLE */
-
 .contact-hero h1 {
     font-family: "Space Grotesk", sans-serif;
 
-    font-size: clamp(65px, 8vw, 125px);
+    font-size: clamp(60px, 8vw, 125px);
 
-    line-height: 0.84;
+    line-height: 0.85;
 
     letter-spacing: -6px;
 
@@ -177,11 +148,8 @@ textarea {
     color: #8ccf63;
 }
 
-
-/* DESCRIPTION */
-
 .hero-description {
-    max-width: 560px;
+    max-width: 550px;
 
     margin-top: 38px;
 
@@ -199,12 +167,11 @@ textarea {
 
 .contact-grid {
     width: 84%;
-
     max-width: 1400px;
 
     margin: 0 auto;
 
-    padding: 85px 0 130px;
+    padding: 90px 0 120px;
 
     display: grid;
 
@@ -212,7 +179,7 @@ textarea {
 
     gap: 100px;
 
-    border-top: 1px solid rgba(255,255,255,0.14);
+    border-top: 1px solid rgba(255,255,255,0.15);
 }
 
 
@@ -227,7 +194,7 @@ textarea {
 
     letter-spacing: 3px;
 
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 
 
@@ -239,52 +206,40 @@ textarea {
 .connect-area h2 {
     font-family: "Space Grotesk", sans-serif;
 
-    font-size: clamp(38px, 4vw, 62px);
+    font-size: clamp(38px, 4vw, 65px);
 
     line-height: 0.9;
 
     letter-spacing: -3px;
 
-    font-weight: 500;
-
-    margin-bottom: 55px;
+    margin-bottom: 50px;
 }
 
 
-/* FORM */
+/* =====================================================
+   FORM
+===================================================== */
 
 #contactForm {
     width: 100%;
-
-    max-width: 760px;
+    max-width: 750px;
 }
-
-
-/* FORM GROUP */
 
 .form-group {
-    margin-bottom: 32px;
+    margin-bottom: 35px;
 }
-
-
-/* LABEL */
 
 .form-group label {
     display: block;
 
     margin-bottom: 12px;
 
-    color: #8f9990;
+    color: #8ccf63;
 
     font-size: 9px;
 
     letter-spacing: 3px;
-
-    font-weight: 600;
 }
-
-
-/* INPUT + TEXTAREA */
 
 .form-group input,
 .form-group textarea {
@@ -292,44 +247,45 @@ textarea {
 
     background: transparent;
 
-    border: none;
-
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.18);
 
     color: #f1f4ef;
 
-    padding: 15px 0;
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    padding: 17px 18px;
 
     outline: none;
 
-    font-size: 14px;
-
     transition:
         border-color 0.3s ease,
-        padding 0.3s ease;
+        background 0.3s ease;
+}
+
+.form-group input {
+    height: 55px;
+}
+
+.form-group textarea {
+    min-height: 160px;
+
+    resize: vertical;
+
+    line-height: 1.7;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #596159;
+    color: #626a63;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #8ccf63;
 
-    padding-left: 8px;
-}
-
-
-/* TEXTAREA */
-
-.form-group textarea {
-    min-height: 130px;
-
-    resize: vertical;
-
-    line-height: 1.7;
+    background: rgba(140,207,99,0.025);
 }
 
 
@@ -342,9 +298,8 @@ textarea {
 
     flex-wrap: wrap;
 
-    gap: 9px;
+    gap: 10px;
 }
-
 
 .topic-btn {
     padding: 11px 16px;
@@ -353,7 +308,9 @@ textarea {
 
     border: 1px solid rgba(255,255,255,0.18);
 
-    color: #929b92;
+    color: #8f9890;
+
+    font-family: "Inter", sans-serif;
 
     font-size: 9px;
 
@@ -361,22 +318,14 @@ textarea {
 
     cursor: pointer;
 
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease;
+    transition: 0.3s ease;
 }
-
 
 .topic-btn:hover {
     border-color: #8ccf63;
 
     color: #8ccf63;
-
-    transform: translateY(-2px);
 }
-
 
 .topic-btn.active {
     background: #8ccf63;
@@ -392,13 +341,11 @@ textarea {
 ===================================================== */
 
 .submit-btn {
-    margin-top: 15px;
-
     width: 100%;
 
     max-width: 260px;
 
-    padding: 18px 22px;
+    padding: 17px 20px;
 
     display: flex;
 
@@ -412,52 +359,39 @@ textarea {
 
     color: #071006;
 
+    font-family: "Inter", sans-serif;
+
     font-size: 10px;
 
-    font-weight: 700;
+    font-weight: 600;
 
     letter-spacing: 2px;
 
     cursor: pointer;
 
     transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+        transform 0.3s ease,
+        background 0.3s ease;
 }
-
-
-.submit-btn .arrow {
-    font-size: 19px;
-
-    transition: transform 0.3s ease;
-}
-
 
 .submit-btn:hover {
-    background: transparent;
-
-    color: #8ccf63;
-
     transform: translateY(-3px);
+
+    background: #a0df79;
 }
 
-
-.submit-btn:hover .arrow {
-    transform: translate(5px, -5px);
+.submit-btn .arrow {
+    font-size: 18px;
 }
-
-
-/* FORM MESSAGE */
 
 .form-message {
     margin-top: 18px;
 
-    font-size: 11px;
-
     color: #8ccf63;
 
-    min-height: 18px;
+    font-size: 11px;
+
+    line-height: 1.5;
 }
 
 
@@ -466,11 +400,10 @@ textarea {
 ===================================================== */
 
 .connect-area {
-    padding-left: 35px;
+    padding-left: 20px;
 
-    border-left: 1px solid rgba(255,255,255,0.13);
+    border-left: 1px solid rgba(255,255,255,0.12);
 }
-
 
 .connect-area h2 {
     margin-bottom: 45px;
@@ -482,13 +415,10 @@ textarea {
 ===================================================== */
 
 .social-links {
-    border-top: 1px solid rgba(255,255,255,0.15);
+    width: 100%;
 }
 
-
 .social-link {
-    width: 100%;
-
     display: flex;
 
     align-items: center;
@@ -497,9 +427,9 @@ textarea {
 
     padding: 22px 0;
 
-    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-top: 1px solid rgba(255,255,255,0.13);
 
-    color: #e7ebe6;
+    color: #f1f4ef;
 
     font-size: 11px;
 
@@ -510,13 +440,9 @@ textarea {
         padding-left 0.3s ease;
 }
 
-
-.social-link span:last-child {
-    font-size: 20px;
-
-    transition: transform 0.3s ease;
+.social-link:last-child {
+    border-bottom: 1px solid rgba(255,255,255,0.13);
 }
-
 
 .social-link:hover {
     color: #8ccf63;
@@ -524,6 +450,11 @@ textarea {
     padding-left: 10px;
 }
 
+.social-link span:last-child {
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
 
 .social-link:hover span:last-child {
     transform: translate(5px, -5px);
@@ -535,15 +466,14 @@ textarea {
 ===================================================== */
 
 .connect-note {
-    margin-top: 65px;
+    margin-top: 70px;
 
     padding-top: 25px;
 
     border-top: 1px solid rgba(255,255,255,0.13);
 }
 
-
-.connect-note span {
+.connect-note > span {
     display: block;
 
     color: #8ccf63;
@@ -555,15 +485,14 @@ textarea {
     margin-bottom: 15px;
 }
 
-
 .connect-note p {
-    max-width: 280px;
+    max-width: 300px;
 
-    color: #737d74;
+    color: #777f78;
 
     font-size: 12px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 
@@ -572,7 +501,9 @@ textarea {
 ===================================================== */
 
 .closing-section {
-    min-height: 90vh;
+    width: 100%;
+
+    min-height: 80vh;
 
     padding: 130px 8%;
 
@@ -583,23 +514,17 @@ textarea {
     justify-content: center;
 
     background:
-        linear-gradient(
-            rgba(4,7,5,0.82),
-            rgba(4,7,5,0.96)
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(140,207,99,0.09),
+            transparent 30%
         ),
-        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2400&q=90");
-
-    background-size: cover;
-
-    background-position: center;
-
-    background-attachment: fixed;
+        #050705;
 
     border-top: 1px solid rgba(255,255,255,0.08);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-
-
-/* CLOSING LABEL */
 
 .closing-label {
     color: #8ccf63;
@@ -608,36 +533,29 @@ textarea {
 
     letter-spacing: 4px;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
-
-
-/* CLOSING TITLE */
 
 .closing-section h2 {
     font-family: "Space Grotesk", sans-serif;
 
-    font-size: clamp(50px, 7vw, 105px);
+    font-size: clamp(45px, 6.5vw, 95px);
 
     line-height: 0.88;
 
     letter-spacing: -5px;
 
-    font-weight: 500;
+    max-width: 1100px;
 }
-
 
 .closing-section h2 span {
     color: #8ccf63;
 }
 
-
-/* CLOSING CREDIT */
-
 .closing-section > p {
-    margin-top: 45px;
+    margin-top: 40px;
 
-    color: #727b73;
+    color: #697269;
 
     font-size: 9px;
 
@@ -660,19 +578,16 @@ footer {
 
     gap: 30px;
 
-    background: #050705;
+    background: #030403;
 
-    border-top: 1px solid rgba(255,255,255,0.08);
-
-    color: #737b74;
+    color: #737a73;
 
     font-size: 9px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 
     letter-spacing: 2px;
 }
-
 
 .footer-left {
     color: #f1f4ef;
@@ -682,49 +597,16 @@ footer {
     font-size: 12px;
 
     letter-spacing: 2px;
-}
 
+    line-height: 1.2;
+}
 
 .footer-center {
     text-align: center;
 }
 
-
 .footer-right {
     text-align: right;
-}
-
-
-/* =====================================================
-   LARGE DESKTOP
-===================================================== */
-
-@media (min-width: 1440px) {
-
-    .navbar {
-        padding-left: 9%;
-        padding-right: 9%;
-    }
-
-    .contact-hero {
-        padding-left: 9%;
-        padding-right: 9%;
-    }
-
-    .contact-grid {
-        width: 82%;
-    }
-
-    .closing-section {
-        padding-left: 9%;
-        padding-right: 9%;
-    }
-
-    footer {
-        padding-left: 9%;
-        padding-right: 9%;
-    }
-
 }
 
 
@@ -734,60 +616,24 @@ footer {
 
 @media (max-width: 1000px) {
 
-    .navbar {
-        padding: 0 6%;
+    .contact-hero,
+    .contact-grid {
+        width: 88%;
     }
-
-
-    .contact-hero {
-        padding: 150px 7% 80px;
-    }
-
-
-    .contact-hero h1 {
-        font-size: clamp(55px, 9vw, 90px);
-
-        letter-spacing: -4px;
-    }
-
 
     .contact-grid {
-        width: 86%;
+        grid-template-columns: 1fr 0.7fr;
 
-        grid-template-columns: 1fr;
-
-        gap: 80px;
+        gap: 60px;
     }
 
-
-    .connect-area {
-        padding-left: 0;
-
-        padding-top: 60px;
-
-        border-left: none;
-
-        border-top: 1px solid rgba(255,255,255,0.13);
+    .contact-hero h1 {
+        font-size: clamp(55px, 8vw, 90px);
     }
 
-
-    .social-links {
-        max-width: 700px;
-    }
-
-
-    .connect-note {
-        max-width: 700px;
-    }
-
-
-    .closing-section {
-        padding: 110px 7%;
-    }
-
-
-    footer {
-        padding: 50px 7%;
+    .form-area h2,
+    .connect-area h2 {
+        font-size: 48px;
     }
 
 }
@@ -799,175 +645,127 @@ footer {
 
 @media (max-width: 700px) {
 
-    body {
-        min-width: 320px;
-    }
-
-
-    /* NAV */
-
     .navbar {
         height: 70px;
 
         padding: 0 6%;
     }
 
-
     .logo {
         font-size: 10px;
-
-        letter-spacing: 1.5px;
     }
-
 
     .back-btn {
         padding: 9px 13px;
 
         font-size: 8px;
-
-        letter-spacing: 1.5px;
     }
 
 
     /* HERO */
 
     .contact-hero {
-        min-height: 72vh;
+        width: 88%;
 
-        padding: 130px 6% 65px;
+        min-height: auto;
+
+        padding-top: 135px;
+        padding-bottom: 75px;
     }
 
-
     .hero-label {
-        font-size: 8px;
+        font-size: 9px;
 
         letter-spacing: 3px;
 
         margin-bottom: 22px;
     }
 
-
     .contact-hero h1 {
-        font-size: clamp(43px, 12vw, 65px);
-
-        line-height: 0.88;
+        font-size: clamp(45px, 13vw, 68px);
 
         letter-spacing: -3px;
-    }
 
+        line-height: 0.88;
+    }
 
     .hero-description {
-        max-width: 340px;
-
-        margin-top: 28px;
-
         font-size: 11px;
 
-        line-height: 1.7;
+        line-height: 1.6;
+
+        margin-top: 25px;
+
+        max-width: 360px;
     }
 
 
-    /* CONTACT GRID */
+    /* GRID */
 
     .contact-grid {
         width: 88%;
 
         padding: 70px 0 90px;
 
-        gap: 65px;
-    }
+        display: flex;
 
+        flex-direction: column;
 
-    .section-number {
-        font-size: 8px;
-
-        letter-spacing: 2.5px;
-
-        margin-bottom: 18px;
-    }
-
-
-    /* HEADINGS */
-
-    .form-area h2,
-    .connect-area h2 {
-        font-size: 36px;
-
-        line-height: 0.92;
-
-        letter-spacing: -2px;
-
-        margin-bottom: 40px;
+        gap: 80px;
     }
 
 
     /* FORM */
 
+    .form-area h2,
+    .connect-area h2 {
+        font-size: 40px;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 35px;
+    }
+
     .form-group {
-        margin-bottom: 27px;
+        margin-bottom: 28px;
     }
 
-
-    .form-group label {
-        font-size: 8px;
-
-        letter-spacing: 2.5px;
-
-        margin-bottom: 9px;
+    .form-group input {
+        height: 50px;
     }
-
-
-    .form-group input,
-    .form-group textarea {
-        font-size: 12px;
-
-        padding: 13px 0;
-    }
-
 
     .form-group textarea {
-        min-height: 105px;
+        min-height: 130px;
     }
-
-
-    /* TOPICS */
 
     .topic-buttons {
         gap: 7px;
     }
 
-
     .topic-btn {
-        padding: 9px 11px;
+        padding: 9px 12px;
 
-        font-size: 7px;
-
-        letter-spacing: 1px;
+        font-size: 8px;
     }
-
-
-    /* SUBMIT */
 
     .submit-btn {
         max-width: 100%;
 
-        padding: 16px 18px;
-
-        font-size: 9px;
-    }
-
-
-    .submit-btn .arrow {
-        font-size: 17px;
+        padding: 15px 17px;
     }
 
 
     /* CONNECT */
 
     .connect-area {
-        padding-top: 50px;
-    }
+        padding-left: 0;
 
+        border-left: none;
+
+        border-top: 1px solid rgba(255,255,255,0.13);
+
+        padding-top: 55px;
+    }
 
     .social-link {
         padding: 18px 0;
@@ -977,85 +775,49 @@ footer {
         letter-spacing: 2px;
     }
 
-
-    .social-link span:last-child {
-        font-size: 18px;
-    }
-
-
     .connect-note {
         margin-top: 45px;
-
-        padding-top: 20px;
-    }
-
-
-    .connect-note span {
-        font-size: 8px;
-
-        letter-spacing: 2.5px;
-    }
-
-
-    .connect-note p {
-        font-size: 10px;
-
-        max-width: 250px;
     }
 
 
     /* CLOSING */
 
     .closing-section {
-        min-height: 85vh;
+        min-height: 70vh;
 
         padding: 90px 6%;
-
-        background-attachment: scroll;
     }
-
 
     .closing-label {
         font-size: 8px;
 
         letter-spacing: 3px;
-
-        margin-bottom: 25px;
     }
 
-
     .closing-section h2 {
-        font-size: clamp(42px, 11vw, 65px);
-
-        line-height: 0.9;
+        font-size: clamp(40px, 11vw, 60px);
 
         letter-spacing: -3px;
     }
 
-
     .closing-section > p {
-        margin-top: 32px;
+        font-size: 8px;
 
-        font-size: 7px;
-
-        letter-spacing: 2px;
+        margin-top: 30px;
     }
 
 
     /* FOOTER */
 
     footer {
-        padding: 40px 6%;
+        padding: 45px 6%;
 
         grid-template-columns: 1fr;
 
-        gap: 25px;
+        gap: 30px;
 
         font-size: 8px;
-
-        letter-spacing: 1.5px;
     }
-
 
     .footer-center,
     .footer-right {
@@ -1072,37 +834,24 @@ footer {
 @media (max-width: 380px) {
 
     .contact-hero {
-        padding-top: 115px;
+        padding-top: 120px;
     }
-
 
     .contact-hero h1 {
-        font-size: 41px;
-
-        letter-spacing: -2.5px;
+        font-size: 42px;
     }
-
 
     .hero-description {
         font-size: 10px;
     }
 
-
     .form-area h2,
     .connect-area h2 {
-        font-size: 32px;
+        font-size: 35px;
     }
-
-
-    .topic-btn {
-        font-size: 6.5px;
-
-        padding: 8px 9px;
-    }
-
 
     .closing-section h2 {
-        font-size: 40px;
+        font-size: 38px;
     }
 
 }
