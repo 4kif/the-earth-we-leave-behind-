@@ -364,14 +364,13 @@ document.addEventListener("keydown", function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const teamCards = document.querySelectorAll(".team-card");
-    const teamDots = document.querySelectorAll(".team-dot");
-    const teamPrev = document.querySelector(".team-btn.prev");
-    const teamNext = document.querySelector(".team-btn.next");
+    const teamCards = document.querySelectorAll(".team-section .team-card");
+    const teamDots = document.querySelectorAll(".team-section .team-dot");
+    const teamPrev = document.querySelector(".team-section .team-btn.prev");
+    const teamNext = document.querySelector(".team-section .team-btn.next");
 
     let currentTeam = 0;
 
-    // Kalau bukan team.html, jangan buat apa-apa
     if (teamCards.length === 0) {
         return;
     }
@@ -380,55 +379,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (index >= teamCards.length) {
             currentTeam = 0;
-        } 
-        else if (index < 0) {
+        } else if (index < 0) {
             currentTeam = teamCards.length - 1;
-        } 
-        else {
+        } else {
             currentTeam = index;
         }
 
         teamCards.forEach(function (card, i) {
-            card.classList.toggle(
-                "active",
-                i === currentTeam
-            );
+            card.classList.remove("active");
+
+            if (i === currentTeam) {
+                card.classList.add("active");
+            }
         });
 
         teamDots.forEach(function (dot, i) {
-            dot.classList.toggle(
-                "active-dot",
-                i === currentTeam
-            );
+            dot.classList.remove("active-dot");
+
+            if (i === currentTeam) {
+                dot.classList.add("active-dot");
+            }
         });
     }
 
-    // LEFT
-    if (teamPrev) {
-        teamPrev.addEventListener("click", function () {
-            showTeam(currentTeam - 1);
-        });
-    }
+    teamPrev.addEventListener("click", function () {
+        showTeam(currentTeam - 1);
+    });
 
-    // RIGHT
-    if (teamNext) {
-        teamNext.addEventListener("click", function () {
-            showTeam(currentTeam + 1);
-        });
-    }
+    teamNext.addEventListener("click", function () {
+        showTeam(currentTeam + 1);
+    });
 
-    // DOTS
     teamDots.forEach(function (dot, index) {
         dot.addEventListener("click", function () {
             showTeam(index);
         });
     });
 
-    // START
     showTeam(0);
 
 });
-
 
 /* ========================================
    CLIMATE CHANGE
