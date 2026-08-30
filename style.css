@@ -25,100 +25,432 @@ color: inherit;
 NAVIGATION
 ========================= */
 
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
-position: fixed;
-top: 0;
-left: 0;
+    position: fixed;
 
-width: 100%;
-height: 80px;
+    top: 0;
+    left: 0;
 
-display: flex;
-align-items: center;
-justify-content: space-between;
+    width: 100%;
+    height: 80px;
 
-padding: 0 6%;
-z-index: 1000;
+    display: flex;
+    align-items: center;
 
-background: rgba(5, 8, 6, 0.7);
+    padding: 0 4%;
 
-backdrop-filter: blur(15px);
+    z-index: 1000;
 
-border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(5, 8, 6, 0.7);
 
-transition: 0.3s;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.3s ease;
 }
 
+
+/* =========================
+   LOGO
+========================= */
+
 .logo {
-display: flex;
-align-items: center;
-gap: 10px;
+    display: flex;
 
-font-family: "Space Grotesk", sans-serif;
+    align-items: center;
 
-font-size: 20px;
+    gap: 10px;
 
-font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
 
-letter-spacing: 2px;
+    font-size: 20px;
 
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
 }
 
 .logo-image {
-width: 37px;
-height: 37px;
-object-fit: cover;
-border-radius: 50%;
-display: block;
+    width: 37px;
+    height: 37px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
 }
 
 .green {
-color: #8ccf63;
+    color: #8ccf63;
 }
 
+
+/* =========================
+   MAIN NAV LINKS
+========================= */
+
 .nav-links {
-display: flex;
+    display: flex;
 
-gap: 25px;
+    align-items: center;
 
+    gap: 20px;
+
+    margin-left: auto;
+
+    margin-right: 25px;
+
+    white-space: nowrap;
 }
 
 .nav-links a {
-font-size: 11px;
+    font-size: 11px;
 
-color: #c5ccc5;
+    color: #c5ccc5;
 
-transition: 0.3s;
-
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-color: #8ccf63;
+    color: #8ccf63;
 }
 
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.nav-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   TAKE ACTION
+========================= */
+
 .nav-button {
-padding: 12px 20px;
+    display: inline-flex;
 
-border: 1px solid #8ccf63;
+    align-items: center;
 
-color: #8ccf63;
+    justify-content: center;
 
-font-size: 11px;
+    padding: 12px 20px;
 
-letter-spacing: 1px;
+    border: 1px solid #8ccf63;
 
-transition: 0.3s;
+    color: #8ccf63;
 
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+    transition: 0.3s ease;
 }
 
 .nav-button:hover {
-background: #8ccf63;
+    background: #8ccf63;
 
-color: #071006;
+    color: #071006;
+}
+
+
+/* =========================
+   THREE LINE BUTTON
+========================= */
+
+.menu-toggle {
+    width: 48px;
+
+    height: 48px;
+
+    padding: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+
+    background: transparent;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    z-index: 1002;
+
+    transition: 0.3s ease;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 19px;
+
+    height: 1px;
+
+    background: #f1f4ef;
+
+    transition: 0.3s ease;
+}
+
+.menu-toggle:hover {
+    border-color: #8ccf63;
+}
+
+.menu-toggle:hover span {
+    background: #8ccf63;
+}
+
+
+/* =========================
+   HAMBURGER → X
+========================= */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* =========================
+   MENU PANEL
+========================= */
+
+.menu-panel {
+    position: fixed;
+
+    top: 0;
+
+    right: -380px;
+
+    width: 360px;
+
+    height: 100vh;
+
+    padding: 130px 45px 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    background: rgba(8,11,9,0.98);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border-left: 1px solid rgba(255,255,255,0.12);
+
+    z-index: 1001;
+
+    transition: right 0.45s cubic-bezier(.77,0,.18,1);
+}
+
+
+/* OPEN */
+
+.menu-panel.active {
+    right: 0;
+}
+
+
+/* =========================
+   MENU TITLE
+========================= */
+
+.menu-label {
+    color: #8ccf63;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   MENU LINKS
+========================= */
+
+.menu-panel a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    color: #f1f4ef;
+
+    font-size: 20px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.menu-panel a span {
+    color: #8ccf63;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.menu-panel a:hover {
+    color: #8ccf63;
+
+    padding-left: 10px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    nav {
+        padding: 0 3%;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        margin-right: 15px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .nav-button {
+        padding: 11px 15px;
+
+        font-size: 10px;
+    }
 
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo {
+        font-size: 17px;
+
+        gap: 8px;
+    }
+
+    .logo-image {
+        width: 34px;
+        height: 34px;
+    }
+
+    .nav-right {
+        gap: 8px;
+    }
+
+    .nav-button {
+        padding: 10px 13px;
+
+        font-size: 9px;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .menu-panel {
+        width: 100%;
+
+        right: -100%;
+
+        padding: 110px 30px 40px;
+    }
+
+    .menu-panel.active {
+        right: 0;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .nav-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+}
 /* =========================
 HERO
 ========================= */
@@ -3189,133 +3521,4 @@ SMALL MOBILE
 ```
 
 }
-
-```css
-/* =========================
-   HAMBURGER MENU
-========================= */
-
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.menu-toggle {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    gap: 5px;
-
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.25);
-
-    cursor: pointer;
-
-    position: relative;
-    z-index: 1002;
-}
-
-.menu-toggle span {
-    width: 19px;
-    height: 1px;
-    background: #f1f4ef;
-
-    transition: 0.3s ease;
-}
-
-
-/* MENU PANEL */
-
-.menu-panel {
-    position: fixed;
-
-    top: 0;
-    right: -380px;
-
-    width: 360px;
-    height: 100vh;
-
-    background: rgba(8, 11, 9, 0.98);
-    backdrop-filter: blur(18px);
-
-    border-left: 1px solid rgba(255,255,255,0.12);
-
-    padding: 130px 45px 50px;
-
-    display: flex;
-    flex-direction: column;
-
-    z-index: 1001;
-
-    transition: right 0.45s ease;
-}
-
-.menu-panel.active {
-    right: 0;
-}
-
-
-/* MENU TITLE */
-
-.menu-label {
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: #7ddc8a;
-
-    margin-bottom: 35px;
-}
-
-
-/* MENU LINKS */
-
-.menu-panel a {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    padding: 20px 0;
-
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-
-    color: #f1f4ef;
-    text-decoration: none;
-
-    font-size: 22px;
-
-    transition: 0.3s ease;
-}
-
-.menu-panel a span {
-    font-size: 11px;
-    color: #7ddc8a;
-}
-
-.menu-panel a:hover {
-    padding-left: 10px;
-    color: #7ddc8a;
-}
-
-
-/* X BUTTON */
-
-.menu-toggle.active span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-}
-```
-
-
 
