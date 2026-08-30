@@ -122,8 +122,38 @@
     </div>
 
 </section>
+<script>
+let currentTeam = 0;
 
-    <script src="script.js"></script>
+const teamCards = document.querySelectorAll(".team-card");
+const teamDots = document.querySelectorAll(".team-dot");
+
+function showTeam(index) {
+
+    if (index >= teamCards.length) {
+        currentTeam = 0;
+    } else if (index < 0) {
+        currentTeam = teamCards.length - 1;
+    } else {
+        currentTeam = index;
+    }
+
+    teamCards.forEach((card, i) => {
+        card.classList.toggle("active", i === currentTeam);
+    });
+
+    teamDots.forEach((dot, i) => {
+        dot.classList.toggle("active-dot", i === currentTeam);
+    });
+}
+
+function changeTeam(direction) {
+    showTeam(currentTeam + direction);
+}
+
+showTeam(0);
+</script>
+    
 
 </body>
 
