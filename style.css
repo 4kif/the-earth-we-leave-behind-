@@ -2728,3 +2728,239 @@ footer {
     }
 
 }
+
+/* =========================
+CONTACT PAGE
+========================= */
+
+.contact-page {
+min-height: 100vh;
+width: 100%;
+
+```
+padding: 110px 8% 50px;
+
+background: #080b09;
+
+display: flex;
+align-items: center;
+
+position: relative;
+overflow: hidden;
+```
+
+}
+
+.contact-content {
+width: 100%;
+max-width: 1100px;
+}
+
+/* =========================
+LABEL
+========================= */
+
+.contact-content .label {
+color: #8ccf63;
+
+```
+font-size: 10px;
+letter-spacing: 3px;
+
+margin-bottom: 22px;
+```
+
+}
+
+/* =========================
+MAIN TITLE
+========================= */
+
+.contact-content h1 {
+font-family: "Space Grotesk", sans-serif;
+
+```
+font-size: clamp(55px, 7.5vw, 110px);
+
+line-height: 0.88;
+
+letter-spacing: -5px;
+
+margin-bottom: 30px;
+```
+
+}
+
+.contact-content h1 span {
+color: #8ccf63;
+}
+
+/* =========================
+DESCRIPTION
+========================= */
+
+.contact-intro {
+color: #9da49d;
+
+```
+font-size: 15px;
+
+line-height: 1.7;
+
+margin-bottom: 42px;
+```
+
+}
+
+/* =========================
+SOCIAL BOX
+========================= */
+
+.social-box {
+width: 430px;
+max-width: 100%;
+
+```
+border-top: 1px solid rgba(255,255,255,0.15);
+
+padding-top: 18px;
+```
+
+}
+
+.social-title {
+color: #8ccf63;
+
+```
+font-size: 10px;
+
+letter-spacing: 3px;
+
+margin-bottom: 5px;
+```
+
+}
+
+/* =========================
+SOCIAL LINKS
+========================= */
+
+.social-link {
+display: flex;
+
+```
+justify-content: space-between;
+align-items: center;
+
+width: 100%;
+
+padding: 19px 0;
+
+border-bottom: 1px solid rgba(255,255,255,0.12);
+
+color: #f1f4ef;
+
+font-size: 12px;
+
+letter-spacing: 2px;
+
+transition: all 0.3s ease;
+```
+
+}
+
+.social-link:hover {
+color: #8ccf63;
+
+```
+padding-left: 10px;
+```
+
+}
+
+.social-link span:last-child {
+font-size: 18px;
+}
+
+/* =====================================================
+TABLET
+768px — 1024px
+===================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+```
+.contact-page {
+    padding: 100px 7% 45px;
+}
+
+.contact-content h1 {
+    font-size: clamp(55px, 8vw, 85px);
+
+    letter-spacing: -4px;
+}
+
+.contact-intro {
+    font-size: 14px;
+
+    margin-bottom: 38px;
+}
+
+.social-box {
+    width: 390px;
+}
+```
+
+}
+
+/* =====================================================
+MOBILE
+0px — 767px
+===================================================== */
+
+@media (max-width: 767px) {
+
+```
+.contact-page {
+    min-height: 100svh;
+
+    padding: 90px 6% 35px;
+
+    align-items: flex-start;
+}
+
+.contact-content h1 {
+
+    font-size: clamp(48px, 13vw, 70px);
+
+    line-height: 0.9;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.contact-intro {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+}
+
+.social-box {
+    width: 100%;
+}
+
+.social-link {
+    padding: 17px 0;
+
+    font-size: 11px;
+}
+
+.social-link:hover {
+    padding-left: 5px;
+}
+```
+
+}
