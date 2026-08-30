@@ -1,1 +1,672 @@
 
+```css
+/* ========================================
+   SHOWCASE — EARTH IN THE DARK
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #030604;
+    color: #f1f4ef;
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
+}
+
+
+/* ========================================
+   BACKGROUND
+======================================== */
+
+.showcase {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(80, 130, 85, 0.08),
+            transparent 32%
+        ),
+        #030604;
+}
+
+
+/* subtle noise */
+
+.noise {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    opacity: 0.035;
+
+    background-image:
+        url("https://grainy-gradients.vercel.app/noise.svg");
+
+    mix-blend-mode: overlay;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.showcase-nav {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 30px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 30;
+}
+
+.back-link {
+    color: #8ccf63;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+.back-link:hover {
+    transform: translateX(-5px);
+}
+
+.nav-logo {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.nav-logo span {
+    color: #8ccf63;
+}
+
+.nav-number {
+    color: #69736b;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+/* ========================================
+   TOP LABEL
+======================================== */
+
+.showcase-label {
+    position: absolute;
+
+    top: 125px;
+    left: 5%;
+
+    color: #8ccf63;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    z-index: 10;
+}
+
+
+/* ========================================
+   EARTH STAGE
+======================================== */
+
+.earth-stage {
+    position: absolute;
+
+    left: 50%;
+    top: 47%;
+
+    width: min(52vw, 650px);
+    aspect-ratio: 1;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* glow */
+
+.earth-glow {
+    position: absolute;
+
+    width: 90%;
+    height: 90%;
+
+    border-radius: 50%;
+
+    background: #8ccf63;
+
+    filter: blur(100px);
+
+    opacity: 0.08;
+
+    animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.05;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 0.12;
+    }
+
+}
+
+
+/* ========================================
+   EARTH
+======================================== */
+
+.earth {
+    position: relative;
+
+    width: 68%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 50px rgba(120, 190, 130, 0.15),
+        0 0 120px rgba(120, 190, 130, 0.08);
+
+    animation: earthFloat 6s ease-in-out infinite;
+
+    z-index: 3;
+}
+
+.earth::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.7),
+            transparent 45%,
+            rgba(140,207,99,0.05)
+        );
+
+    pointer-events: none;
+}
+
+.earth img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter:
+        brightness(0.7)
+        saturate(0.8)
+        contrast(1.1);
+
+    transition:
+        transform 1s ease,
+        filter 0.8s ease;
+}
+
+.earth:hover img {
+    transform: scale(1.08);
+
+    filter:
+        brightness(0.85)
+        saturate(1)
+        contrast(1.1);
+}
+
+@keyframes earthFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+/* ========================================
+   ORBITS
+======================================== */
+
+.orbit {
+    position: absolute;
+
+    border: 1px solid rgba(140,207,99,0.18);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.orbit-one {
+    width: 82%;
+    height: 34%;
+
+    transform: rotate(-25deg);
+}
+
+.orbit-two {
+    width: 95%;
+    height: 45%;
+
+    transform: rotate(30deg);
+
+    border-color:
+        rgba(255,255,255,0.06);
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.showcase-title {
+    position: absolute;
+
+    left: 5%;
+    bottom: 17%;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+.title-small {
+    display: block;
+
+    color: #7e8980;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+.showcase-title h1 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(48px, 7vw, 100px);
+
+    line-height: 0.88;
+
+    letter-spacing: -5px;
+
+    font-weight: 600;
+}
+
+.showcase-title h1 span {
+    color: #8ccf63;
+}
+
+
+/* ========================================
+   BOTTOM BAR
+======================================== */
+
+.showcase-bottom {
+    position: absolute;
+
+    left: 5%;
+    right: 5%;
+    bottom: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 30;
+}
+
+
+/* ========================================
+   COUNTER
+======================================== */
+
+.showcase-counter {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #717a72;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.showcase-counter #current {
+    color: #8ccf63;
+}
+
+.line {
+    width: 80px;
+
+    height: 1px;
+
+    background: #303830;
+}
+
+
+/* ========================================
+   TOPICS
+======================================== */
+
+.showcase-topics {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+.topic {
+    border: none;
+
+    background: transparent;
+
+    color: #59635b;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    padding: 5px 0;
+
+    transition: 0.3s ease;
+}
+
+.topic:hover,
+.topic.active {
+    color: #f1f4ef;
+}
+
+
+/* ========================================
+   NEXT BUTTON
+======================================== */
+
+.next-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border: 1px solid rgba(140,207,99,0.35);
+
+    background: transparent;
+
+    color: #8ccf63;
+
+    padding: 13px 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.next-button span {
+    font-size: 16px;
+
+    transition: 0.3s ease;
+}
+
+.next-button:hover {
+    background: #8ccf63;
+
+    color: #061006;
+}
+
+.next-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .earth-stage {
+        width: 65vw;
+    }
+
+    .showcase-title {
+        bottom: 18%;
+    }
+
+    .showcase-title h1 {
+        font-size: clamp(45px, 9vw, 75px);
+    }
+
+    .showcase-topics {
+        gap: 12px;
+    }
+
+    .topic {
+        font-size: 8px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .showcase {
+        min-height: 100svh;
+        height: 100svh;
+    }
+
+    .showcase-nav {
+        padding: 22px 6%;
+    }
+
+    .nav-logo {
+        font-size: 16px;
+    }
+
+    .nav-number {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .showcase-label {
+        top: 95px;
+        left: 6%;
+
+        font-size: 7px;
+
+        letter-spacing: 2.5px;
+    }
+
+    .earth-stage {
+        width: 105vw;
+
+        top: 43%;
+    }
+
+    .earth {
+        width: 63%;
+    }
+
+    .showcase-title {
+        left: 6%;
+
+        bottom: 22%;
+
+        right: 6%;
+    }
+
+    .title-small {
+        font-size: 7px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 12px;
+    }
+
+    .showcase-title h1 {
+        font-size: clamp(42px, 13vw, 65px);
+
+        letter-spacing: -3px;
+    }
+
+    .showcase-bottom {
+        left: 6%;
+        right: 6%;
+
+        bottom: 20px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .showcase-topics {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 18px;
+    }
+
+    .topic {
+        font-size: 7px;
+    }
+
+    .line {
+        width: 45px;
+    }
+
+    .next-button {
+        padding: 10px 13px;
+
+        font-size: 8px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+    .earth-stage {
+        top: 40%;
+    }
+
+    .showcase-title {
+        bottom: 24%;
+    }
+
+    .showcase-title h1 {
+        font-size: 39px;
+    }
+
+    .showcase-topics {
+        gap: 10px;
+    }
+
+    .topic {
+        font-size: 6px;
+    }
+
+}
+```
