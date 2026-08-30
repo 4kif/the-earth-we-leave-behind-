@@ -1,4 +1,3 @@
-
 /* =========================
    SCROLL REVEAL
 ========================= */
@@ -6,6 +5,7 @@
 const revealElements = document.querySelectorAll(
     ".info-card, .cause, .impact-item, .solution-card, .stat, .sustainability-card"
 );
+
 
 const revealObserver = new IntersectionObserver(
 
@@ -31,6 +31,7 @@ const revealObserver = new IntersectionObserver(
 
 );
 
+
 revealElements.forEach((element) => {
 
     element.style.opacity = "0";
@@ -43,6 +44,7 @@ revealElements.forEach((element) => {
     revealObserver.observe(element);
 
 });
+
 
 const style = document.createElement("style");
 
@@ -60,6 +62,7 @@ style.innerHTML = `
 
 document.head.appendChild(style);
 
+
 /* =========================
    CHECKLIST
 ========================= */
@@ -68,11 +71,14 @@ const checkboxes = document.querySelectorAll(
     '.checklist input[type="checkbox"]'
 );
 
+
 const progressText =
     document.getElementById("progress");
 
+
 const progressFill =
     document.getElementById("progress-fill");
+
 
 function updateProgress() {
 
@@ -81,19 +87,24 @@ function updateProgress() {
             '.checklist input[type="checkbox"]:checked'
         );
 
+
     const total =
         checkboxes.length;
+
 
     const percentage =
         (completed / total) * 100;
 
+
     progressText.textContent =
         `${completed} / ${total}`;
+
 
     progressFill.style.width =
         `${percentage}%`;
 
 }
+
 
 checkboxes.forEach((checkbox) => {
 
@@ -104,6 +115,7 @@ checkboxes.forEach((checkbox) => {
 
 });
 
+
 /* =========================
    COUNTER
 ========================= */
@@ -111,13 +123,16 @@ checkboxes.forEach((checkbox) => {
 const counters =
     document.querySelectorAll(".counter");
 
+
 let counterStarted = false;
+
 
 function startCounters() {
 
     if (counterStarted) return;
 
     counterStarted = true;
+
 
     counters.forEach((counter) => {
 
@@ -126,14 +141,18 @@ function startCounters() {
                 counter.getAttribute("data-target")
             );
 
+
         let current = 0;
+
 
         const increment =
             target / 50;
 
+
         function updateCounter() {
 
             current += increment;
+
 
             if (current < target) {
 
@@ -153,14 +172,17 @@ function startCounters() {
 
         }
 
+
         updateCounter();
 
     });
 
 }
 
+
 const dataSection =
     document.querySelector(".data-section");
+
 
 const counterObserver =
     new IntersectionObserver(
@@ -181,7 +203,9 @@ const counterObserver =
 
     );
 
+
 counterObserver.observe(dataSection);
+
 
 /* =========================
    NAVBAR
@@ -189,6 +213,7 @@ counterObserver.observe(dataSection);
 
 const navbar =
     document.querySelector("nav");
+
 
 window.addEventListener(
     "scroll",
@@ -209,6 +234,7 @@ window.addEventListener(
     }
 );
 
+
 /* =========================
    HERO PARALLAX
 ========================= */
@@ -216,12 +242,14 @@ window.addEventListener(
 const hero =
     document.querySelector(".hero");
 
+
 window.addEventListener(
     "scroll",
     () => {
 
         const scrollPosition =
             window.scrollY;
+
 
         if (
             scrollPosition <
@@ -249,12 +277,14 @@ const nextButton = document.querySelector(".slider-btn.next");
 let currentSlide = 0;
 const totalSlides = slideItems.length;
 
+
 // FUNCTION UNTUK TUKAR SLIDE
 
 function updateSlider() {
     slides.style.transform =
         `translateX(-${currentSlide * 100}%)`;
 }
+
 
 // BUTTON NEXT
 
@@ -270,6 +300,7 @@ nextButton.addEventListener("click", () => {
 
 });
 
+
 // BUTTON PREVIOUS
 
 prevButton.addEventListener("click", () => {
@@ -283,6 +314,7 @@ prevButton.addEventListener("click", () => {
     updateSlider();
 
 });
+
 
 // OPTIONAL:
 // GUNA ARROW KEY KEYBOARD
@@ -300,6 +332,7 @@ document.addEventListener("keydown", (event) => {
         updateSlider();
 
     }
+
 
     if (event.key === "ArrowLeft") {
 
@@ -327,6 +360,7 @@ const teamCards =
 const teamDots =
     document.querySelectorAll(".team-dot");
 
+
 function showTeam(index) {
 
     /* LOOP SLIDER */
@@ -349,6 +383,7 @@ function showTeam(index) {
 
     }
 
+
     /* CHANGE TEAM */
 
     teamCards.forEach((card, i) => {
@@ -359,6 +394,7 @@ function showTeam(index) {
         );
 
     });
+
 
     /* CHANGE DOT */
 
@@ -372,6 +408,7 @@ function showTeam(index) {
     });
 
 }
+
 
 function changeTeam(direction) {
 
@@ -411,32 +448,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(card);
   });
-});
-
-```javascript
-// =========================
-// HAMBURGER MENU
-// =========================
-
-const menuToggle = document.getElementById("menuToggle");
-const menuPanel = document.getElementById("menuPanel");
-
-menuToggle.addEventListener("click", () => {
-
-    menuToggle.classList.toggle("active");
-    menuPanel.classList.toggle("active");
-
-});
-
-// Tutup menu bila klik link
-
-document.querySelectorAll(".menu-panel a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        menuToggle.classList.remove("active");
-        menuPanel.classList.remove("active");
-
-    });
-
 });
