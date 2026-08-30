@@ -7,60 +7,58 @@ const revealElements = document.querySelectorAll(
     ".info-card, .cause, .impact-item, .solution-card, .stat, .sustainability-card"
 );
 
-if (revealElements.length > 0) {
+const revealObserver = new IntersectionObserver(
 
-    const revealObserver = new IntersectionObserver(
-        (entries) => {
+    (entries) => {
 
-            entries.forEach((entry) => {
+        entries.forEach((entry) => {
 
-                if (entry.isIntersecting) {
+            if (entry.isIntersecting) {
 
-                    entry.target.classList.add("show");
+                entry.target.classList.add("show");
 
-                    revealObserver.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
 
-                }
+            }
 
-            });
+        });
 
-        },
-        {
-            threshold: 0.15
-        }
-    );
+    },
 
-    revealElements.forEach((element) => {
-
-        element.style.opacity = "0";
-
-        element.style.transform = "translateY(30px)";
-
-        element.style.transition =
-            "opacity 0.7s ease, transform 0.7s ease";
-
-        revealObserver.observe(element);
-
-    });
-
-}
-
-
-/* =========================
-   SCROLL REVEAL STYLE
-========================= */
-
-const revealStyle = document.createElement("style");
-
-revealStyle.innerHTML = `
-    .show {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
+    {
+        threshold: 0.15
     }
+
+);
+
+revealElements.forEach((element) => {
+
+    element.style.opacity = "0";
+
+    element.style.transform = "translateY(30px)";
+
+    element.style.transition =
+        "opacity 0.7s ease, transform 0.7s ease";
+
+    revealObserver.observe(element);
+
+});
+
+const style = document.createElement("style");
+
+style.innerHTML = `
+
+    .show {
+
+        opacity: 1 !important;
+
+        transform: translateY(0) !important;
+
+    }
+
 `;
 
-document.head.appendChild(revealStyle);
-
+document.head.appendChild(style);
 
 /* =========================
    CHECKLIST
@@ -76,33 +74,26 @@ const progressText =
 const progressFill =
     document.getElementById("progress-fill");
 
-
 function updateProgress() {
 
     const completed =
         document.querySelectorAll(
             '.checklist input[type="checkbox"]:checked'
-        ).length;
+        );
 
-    const total = checkboxes.length;
-
-    if (total === 0) return;
+    const total =
+        checkboxes.length;
 
     const percentage =
         (completed / total) * 100;
 
-    if (progressText) {
-        progressText.textContent =
-            `${completed} / ${total}`;
-    }
+    progressText.textContent =
+        `${completed} / ${total}`;
 
-    if (progressFill) {
-        progressFill.style.width =
-            `${percentage}%`;
-    }
+    progressFill.style.width =
+        `${percentage}%`;
 
 }
-
 
 checkboxes.forEach((checkbox) => {
 
@@ -113,9 +104,6 @@ checkboxes.forEach((checkbox) => {
 
 });
 
-updateProgress();
-
-
 /* =========================
    COUNTER
 ========================= */
@@ -124,7 +112,6 @@ const counters =
     document.querySelectorAll(".counter");
 
 let counterStarted = false;
-
 
 function startCounters() {
 
@@ -143,7 +130,6 @@ function startCounters() {
 
         const increment =
             target / 50;
-
 
         function updateCounter() {
 
@@ -173,67 +159,55 @@ function startCounters() {
 
 }
 
-
 const dataSection =
     document.querySelector(".data-section");
 
+const counterObserver =
+    new IntersectionObserver(
 
-if (dataSection && counters.length > 0) {
+        (entries) => {
 
-    const counterObserver =
-        new IntersectionObserver(
+            if (entries[0].isIntersecting) {
 
-            (entries) => {
+                startCounters();
 
-                if (entries[0].isIntersecting) {
-
-                    startCounters();
-
-                }
-
-            },
-            {
-                threshold: 0.3
             }
 
-        );
+        },
 
-    counterObserver.observe(dataSection);
+        {
+            threshold: 0.3
+        }
 
-}
+    );
 
+counterObserver.observe(dataSection);
 
 /* =========================
-   NAVBAR SCROLL
+   NAVBAR
 ========================= */
 
 const navbar =
     document.querySelector("nav");
 
+window.addEventListener(
+    "scroll",
+    () => {
 
-if (navbar) {
+        if (window.scrollY > 50) {
 
-    window.addEventListener(
-        "scroll",
-        () => {
+            navbar.style.background =
+                "rgba(5, 8, 6, 0.95)";
 
-            if (window.scrollY > 50) {
+        } else {
 
-                navbar.style.background =
-                    "rgba(5, 8, 6, 0.95)";
-
-            } else {
-
-                navbar.style.background =
-                    "rgba(5, 8, 6, 0.7)";
-
-            }
+            navbar.style.background =
+                "rgba(5, 8, 6, 0.7)";
 
         }
-    );
 
-}
-
+    }
+);
 
 /* =========================
    HERO PARALLAX
@@ -242,150 +216,104 @@ if (navbar) {
 const hero =
     document.querySelector(".hero");
 
+window.addEventListener(
+    "scroll",
+    () => {
 
-if (hero) {
+        const scrollPosition =
+            window.scrollY;
 
-    window.addEventListener(
-        "scroll",
-        () => {
+        if (
+            scrollPosition <
+            window.innerHeight
+        ) {
 
-            const scrollPosition =
-                window.scrollY;
-
-
-            if (
-                scrollPosition <
-                window.innerHeight
-            ) {
-
-                hero.style.backgroundPosition =
-                    `center ${scrollPosition * 0.35}px`;
-
-            }
-
-        }
-    );
-
-}
-
-
-/* ========================================
-   CAUSES SLIDER
-======================================== */
-
-const slides =
-    document.querySelector(".slides");
-
-const slideItems =
-    document.querySelectorAll(".slide");
-
-const prevButton =
-    document.querySelector(".slider-btn.prev");
-
-const nextButton =
-    document.querySelector(".slider-btn.next");
-
-let currentSlide = 0;
-
-const totalSlides =
-    slideItems.length;
-
-
-function updateSlider() {
-
-    if (!slides || totalSlides === 0) return;
-
-    slides.style.transform =
-        `translateX(-${currentSlide * 100}%)`;
-
-}
-
-
-/* NEXT */
-
-if (nextButton) {
-
-    nextButton.addEventListener("click", () => {
-
-        currentSlide++;
-
-        if (currentSlide >= totalSlides) {
-
-            currentSlide = 0;
-
-        }
-
-        updateSlider();
-
-    });
-
-}
-
-
-/* PREVIOUS */
-
-if (prevButton) {
-
-    prevButton.addEventListener("click", () => {
-
-        currentSlide--;
-
-        if (currentSlide < 0) {
-
-            currentSlide =
-                totalSlides - 1;
-
-        }
-
-        updateSlider();
-
-    });
-
-}
-
-
-/* KEYBOARD */
-
-document.addEventListener(
-    "keydown",
-    (event) => {
-
-        if (!slides || totalSlides === 0) return;
-
-
-        if (event.key === "ArrowRight") {
-
-            currentSlide++;
-
-            if (currentSlide >= totalSlides) {
-
-                currentSlide = 0;
-
-            }
-
-            updateSlider();
-
-        }
-
-
-        if (event.key === "ArrowLeft") {
-
-            currentSlide--;
-
-            if (currentSlide < 0) {
-
-                currentSlide =
-                    totalSlides - 1;
-
-            }
-
-            updateSlider();
+            hero.style.backgroundPosition =
+                `center ${scrollPosition * 0.35}px`;
 
         }
 
     }
 );
 
+// ========================================
+// CAUSES SLIDER
+// ========================================
+
+const slides = document.querySelector(".slides");
+const slideItems = document.querySelectorAll(".slide");
+
+const prevButton = document.querySelector(".slider-btn.prev");
+const nextButton = document.querySelector(".slider-btn.next");
+
+let currentSlide = 0;
+const totalSlides = slideItems.length;
+
+// FUNCTION UNTUK TUKAR SLIDE
+
+function updateSlider() {
+    slides.style.transform =
+        `translateX(-${currentSlide * 100}%)`;
+}
+
+// BUTTON NEXT
+
+nextButton.addEventListener("click", () => {
+
+    currentSlide++;
+
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    }
+
+    updateSlider();
+
+});
+
+// BUTTON PREVIOUS
+
+prevButton.addEventListener("click", () => {
+
+    currentSlide--;
+
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    }
+
+    updateSlider();
+
+});
+
+// OPTIONAL:
+// GUNA ARROW KEY KEYBOARD
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "ArrowRight") {
+
+        currentSlide++;
+
+        if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        }
+
+        updateSlider();
+
+    }
+
+    if (event.key === "ArrowLeft") {
+
+        currentSlide--;
+
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        }
+
+        updateSlider();
+
+    }
+
+});
 
 /* ========================================
    OUR TEAM SLIDER
@@ -399,11 +327,9 @@ const teamCards =
 const teamDots =
     document.querySelectorAll(".team-dot");
 
-
 function showTeam(index) {
 
-    if (teamCards.length === 0) return;
-
+    /* LOOP SLIDER */
 
     if (index >= teamCards.length) {
 
@@ -413,8 +339,7 @@ function showTeam(index) {
 
     else if (index < 0) {
 
-        currentTeam =
-            teamCards.length - 1;
+        currentTeam = teamCards.length - 1;
 
     }
 
@@ -424,6 +349,7 @@ function showTeam(index) {
 
     }
 
+    /* CHANGE TEAM */
 
     teamCards.forEach((card, i) => {
 
@@ -434,6 +360,7 @@ function showTeam(index) {
 
     });
 
+    /* CHANGE DOT */
 
     teamDots.forEach((dot, i) => {
 
@@ -446,7 +373,6 @@ function showTeam(index) {
 
 }
 
-
 function changeTeam(direction) {
 
     showTeam(
@@ -455,115 +381,62 @@ function changeTeam(direction) {
 
 }
 
-
 /* ========================================
-   CLIMATE CHANGE CARDS
+   CLIMATE CHANGE
 ======================================== */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".info-card");
 
-        const cards =
-            document.querySelectorAll(".info-card");
-
-        if (cards.length === 0) return;
-
-
-        const observer =
-            new IntersectionObserver(
-                (entries) => {
-
-                    entries.forEach((entry) => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.style.opacity =
-                                "1";
-
-                            entry.target.style.transform =
-                                "translateY(0)";
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.1
-                }
-            );
-
-
-        cards.forEach((card) => {
-
-            card.style.opacity = "0";
-
-            card.style.transform =
-                "translateY(20px)";
-
-            card.style.transition =
-                "opacity 0.6s ease, transform 0.6s ease";
-
-            observer.observe(card);
-
-        });
-
-    }
-);
-
-
-/* ========================================
-   HAMBURGER MENU
-======================================== */
-
-const menuToggle =
-    document.getElementById("menuToggle");
-
-const menuPanel =
-    document.getElementById("menuPanel");
-
-
-if (menuToggle && menuPanel) {
-
-
-    /* OPEN / CLOSE MENU */
-
-    menuToggle.addEventListener(
-        "click",
-        () => {
-
-            menuToggle.classList.toggle("active");
-
-            menuPanel.classList.toggle("active");
-
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
         }
-    );
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
 
+  cards.forEach((card) => {
+    // Set initial state
+    card.style.opacity = "0";
+    card.style.transform = "translateY(20px)";
+    card.style.transition =
+      "opacity 0.6s ease, transform 0.6s ease";
 
-    /* CLOSE AFTER CLICKING LINK */
+    observer.observe(card);
+  });
+});
 
-    const menuLinks =
-        menuPanel.querySelectorAll("a");
+```javascript
+// =========================
+// HAMBURGER MENU
+// =========================
 
+const menuToggle = document.getElementById("menuToggle");
+const menuPanel = document.getElementById("menuPanel");
 
-    menuLinks.forEach((link) => {
+menuToggle.addEventListener("click", () => {
 
-        link.addEventListener(
-            "click",
-            () => {
+    menuToggle.classList.toggle("active");
+    menuPanel.classList.toggle("active");
 
-                menuToggle.classList.remove(
-                    "active"
-                );
+});
 
-                menuPanel.classList.remove(
-                    "active"
-                );
+// Tutup menu bila klik link
 
-            }
-        );
+document.querySelectorAll(".menu-panel a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menuToggle.classList.remove("active");
+        menuPanel.classList.remove("active");
 
     });
 
-}
+});
