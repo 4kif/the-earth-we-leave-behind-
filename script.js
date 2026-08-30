@@ -264,6 +264,7 @@ window.addEventListener(
     }
 );
 
+
 // ========================================
 // CAUSES SLIDER
 // ========================================
@@ -278,48 +279,56 @@ let currentSlide = 0;
 const totalSlides = slideItems.length;
 
 
-// FUNCTION UNTUK TUKAR SLIDE
-
+// UPDATE SLIDE
 function updateSlider() {
+
+    if (!slides || totalSlides === 0) return;
+
     slides.style.transform =
         `translateX(-${currentSlide * 100}%)`;
 }
 
 
-// BUTTON NEXT
+// NEXT BUTTON
+if (nextButton) {
 
-nextButton.addEventListener("click", () => {
+    nextButton.addEventListener("click", function () {
 
-    currentSlide++;
+        currentSlide++;
 
-    if (currentSlide >= totalSlides) {
-        currentSlide = 0;
-    }
+        if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        }
 
-    updateSlider();
+        updateSlider();
 
-});
+    });
 
-
-// BUTTON PREVIOUS
-
-prevButton.addEventListener("click", () => {
-
-    currentSlide--;
-
-    if (currentSlide < 0) {
-        currentSlide = totalSlides - 1;
-    }
-
-    updateSlider();
-
-});
+}
 
 
-// OPTIONAL:
-// GUNA ARROW KEY KEYBOARD
+// PREVIOUS BUTTON
+if (prevButton) {
 
-document.addEventListener("keydown", (event) => {
+    prevButton.addEventListener("click", function () {
+
+        currentSlide--;
+
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        }
+
+        updateSlider();
+
+    });
+
+}
+
+
+// KEYBOARD
+document.addEventListener("keydown", function (event) {
+
+    if (!slides || totalSlides === 0) return;
 
     if (event.key === "ArrowRight") {
 
@@ -332,7 +341,6 @@ document.addEventListener("keydown", (event) => {
         updateSlider();
 
     }
-
 
     if (event.key === "ArrowLeft") {
 
