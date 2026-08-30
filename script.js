@@ -364,13 +364,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const teamCards = document.querySelectorAll(".team-card");
     const teamDots = document.querySelectorAll(".team-dot");
-
-    const prevButton = document.querySelector(".team-btn.prev");
-    const nextButton = document.querySelector(".team-btn.next");
+    const teamPrev = document.querySelector(".team-btn.prev");
+    const teamNext = document.querySelector(".team-btn.next");
 
     let currentTeam = 0;
 
-    // Pastikan Team page memang wujud
+    // Kalau bukan team.html, jangan buat apa-apa
     if (teamCards.length === 0) {
         return;
     }
@@ -387,43 +386,48 @@ document.addEventListener("DOMContentLoaded", function () {
             currentTeam = index;
         }
 
-        teamCards.forEach((card, i) => {
+        teamCards.forEach(function (card, i) {
             card.classList.toggle(
                 "active",
                 i === currentTeam
             );
         });
 
-        teamDots.forEach((dot, i) => {
+        teamDots.forEach(function (dot, i) {
             dot.classList.toggle(
                 "active-dot",
                 i === currentTeam
             );
         });
-
     }
 
-    if (prevButton) {
-        prevButton.addEventListener("click", function () {
+    // LEFT
+    if (teamPrev) {
+        teamPrev.addEventListener("click", function () {
             showTeam(currentTeam - 1);
         });
     }
 
-    if (nextButton) {
-        nextButton.addEventListener("click", function () {
+    // RIGHT
+    if (teamNext) {
+        teamNext.addEventListener("click", function () {
             showTeam(currentTeam + 1);
         });
     }
 
-    teamDots.forEach((dot, index) => {
+    // DOTS
+    teamDots.forEach(function (dot, index) {
         dot.addEventListener("click", function () {
             showTeam(index);
         });
     });
 
+    // START
     showTeam(0);
 
 });
+
+
 /* ========================================
    CLIMATE CHANGE
 ======================================== */
