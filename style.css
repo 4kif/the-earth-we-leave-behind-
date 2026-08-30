@@ -2645,3 +2645,86 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* =========================
+   SHOWCASE
+========================= */
+
+.showcase {
+    min-height: 100vh;
+    padding: 120px 7% 50px;
+    background: #080b09;
+}
+
+.showcase-title {
+    margin-bottom: 40px;
+}
+
+.showcase-title h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(45px, 6vw, 80px);
+    line-height: 0.9;
+    letter-spacing: -4px;
+}
+
+.showcase-title h1 span {
+    color: #8ccf63;
+}
+
+
+/* POSTER + VIDEO */
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 25px;
+
+    height: 450px;
+}
+
+
+/* POSTER */
+
+.showcase-poster {
+    height: 100%;
+    overflow: hidden;
+}
+
+.showcase-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* VIDEO */
+
+.showcase-video {
+    height: 100%;
+    background: #000;
+}
+
+.showcase-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .showcase-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .showcase-poster,
+    .showcase-video {
+        height: 400px;
+    }
+
+}
