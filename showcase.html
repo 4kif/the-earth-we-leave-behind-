@@ -1,62 +1,133 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Showcase — The Earth We Leave Behind</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="showcase.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- SHOWCASE -->
+    <!-- BACKGROUND -->
+    <div class="noise"></div>
 
-    <section class="showcase">
+    <!-- NAV -->
+    <nav class="showcase-nav">
 
+        <a href="index.html" class="back-link">
+            ← BACK
+        </a>
+
+        <div class="nav-logo">
+            EARTH<span>.</span>
+        </div>
+
+        <div class="nav-number">
+            08 / SHOWCASE
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+    <main class="showcase">
+
+        <!-- TOP LABEL -->
+        <div class="showcase-label">
+            VISUAL STORIES FROM A CHANGING PLANET
+        </div>
+
+
+        <!-- EARTH VISUAL -->
+        <div class="earth-stage">
+
+            <div class="earth-glow"></div>
+
+            <div class="earth">
+                <img
+                    src="earth.jpg"
+                    alt="Planet Earth"
+                >
+            </div>
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+        </div>
+
+
+        <!-- TEXT -->
         <div class="showcase-title">
 
-            <p class="label">04 — SHOWCASE</p>
+            <span class="title-small">
+                THE WORLD WE INHERIT
+            </span>
 
             <h1>
-                STORIES WE<br>
-                <span>NEED TO SEE.</span>
+                THE EARTH<br>
+                <span>WE LEAVE BEHIND.</span>
             </h1>
 
         </div>
 
 
-        <div class="showcase-grid">
+        <!-- BOTTOM -->
+        <div class="showcase-bottom">
 
-            <!-- POSTER -->
+            <div class="showcase-counter">
+                <span id="current">01</span>
+                <span class="line"></span>
+                <span>06</span>
+            </div>
 
-            <div class="showcase-poster">
 
-                <img src="poster.jpg" alt="Climate Change Poster">
+            <div class="showcase-topics">
+
+                <button class="topic active" data-index="0">
+                    CLIMATE
+                </button>
+
+                <button class="topic" data-index="1">
+                    NATURE
+                </button>
+
+                <button class="topic" data-index="2">
+                    OCEANS
+                </button>
+
+                <button class="topic" data-index="3">
+                    CITIES
+                </button>
+
+                <button class="topic" data-index="4">
+                    PEOPLE
+                </button>
+
+                <button class="topic" data-index="5">
+                    FUTURE
+                </button>
 
             </div>
 
 
-            <!-- VIDEO -->
-
-            <div class="showcase-video">
-
-                <iframe
-                    src="https://www.youtube.com/embed/G4H1N_yXBiA"
-                    title="National Geographic Climate Change"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
+            <button class="next-button" id="nextButton">
+                NEXT
+                <span>→</span>
+            </button>
 
         </div>
 
-    </section>
+    </main>
+
+
+    <script src="showcase.js"></script>
 
 </body>
 </html>
+```
