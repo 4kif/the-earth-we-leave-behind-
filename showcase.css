@@ -1,6 +1,6 @@
-
+```css
 /* ========================================
-   SHOWCASE — EARTH IN THE DARK
+   RESET
 ======================================== */
 
 * {
@@ -12,19 +12,208 @@
 html,
 body {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
-    background: #030604;
-    color: #f1f4ef;
     font-family: "Inter", sans-serif;
+    background: #080b09;
+    color: #f1f4ef;
     overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
 /* ========================================
-   BACKGROUND
+   NAVIGATION
+======================================== */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    padding: 0 5vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 100;
+}
+
+
+/* LOGO */
+
+.logo-link {
+    display: block;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.green {
+    color: #7ddc8a;
+}
+
+
+/* RIGHT */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.page-number {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #8d968f;
+}
+
+
+/* ========================================
+   HAMBURGER
+======================================== */
+
+.menu-toggle {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.03);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.menu-toggle span {
+    width: 17px;
+    height: 1px;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+.menu-toggle:hover {
+    border-color: #7ddc8a;
+}
+
+
+/* X */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* ========================================
+   MENU PANEL
+======================================== */
+
+.menu-panel {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: min(420px, 85vw);
+    height: 100vh;
+
+    background: #101510;
+
+    border-left: 1px solid rgba(255,255,255,0.08);
+
+    padding: 130px 50px;
+
+    z-index: 90;
+
+    transform: translateX(100%);
+
+    transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+}
+
+.menu-panel.active {
+    transform: translateX(0);
+}
+
+.menu-label {
+    color: #7ddc8a;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    margin-bottom: 45px;
+}
+
+.menu-panel a {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 28px;
+
+    transition: 0.3s;
+}
+
+.menu-panel a span {
+    color: #697169;
+    font-size: 11px;
+}
+
+.menu-panel a:hover {
+    color: #7ddc8a;
+    padding-left: 10px;
+}
+
+
+/* ========================================
+   SHOWCASE
 ======================================== */
 
 .showcase {
@@ -33,227 +222,72 @@ body {
     width: 100%;
     height: 100vh;
 
-    min-height: 600px;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 45%,
-            rgba(80, 130, 85, 0.08),
-            transparent 32%
-        ),
-        #030604;
-}
-
-
-/* subtle noise */
-
-.noise {
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 20;
-
-    opacity: 0.035;
-
-    background-image:
-        url("https://grainy-gradients.vercel.app/noise.svg");
-
-    mix-blend-mode: overlay;
 }
 
 
 /* ========================================
-   NAVIGATION
+   BACKGROUND TEXT
 ======================================== */
 
-.showcase-nav {
+.background-text {
     position: absolute;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    padding: 30px 5%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    z-index: 30;
-}
-
-.back-link {
-    color: #8ccf63;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    transition: 0.3s ease;
-}
-
-.back-link:hover {
-    transform: translateX(-5px);
-}
-
-.nav-logo {
-    position: absolute;
-
-    left: 50%;
-
-    transform: translateX(-50%);
+    left: -4vw;
+    bottom: -8vh;
 
     font-family: "Space Grotesk", sans-serif;
 
-    font-size: 20px;
+    font-size: clamp(150px, 27vw, 430px);
 
     font-weight: 700;
 
-    letter-spacing: 3px;
-}
+    line-height: 0.7;
 
-.nav-logo span {
-    color: #8ccf63;
-}
+    color: rgba(255,255,255,0.025);
 
-.nav-number {
-    color: #69736b;
+    pointer-events: none;
 
-    font-size: 9px;
-
-    letter-spacing: 3px;
+    user-select: none;
 }
 
 
 /* ========================================
-   TOP LABEL
+   VIDEO CONTAINER
 ======================================== */
 
-.showcase-label {
+.video-container {
     position: absolute;
 
-    top: 125px;
-    left: 5%;
-
-    color: #8ccf63;
-
-    font-size: 9px;
-
-    letter-spacing: 4px;
-
-    z-index: 10;
-}
-
-
-/* ========================================
-   EARTH STAGE
-======================================== */
-
-.earth-stage {
-    position: absolute;
+    width: min(70vw, 950px);
+    height: min(63vh, 590px);
 
     left: 50%;
-    top: 47%;
-
-    width: min(52vw, 650px);
-    aspect-ratio: 1;
+    top: 48%;
 
     transform: translate(-50%, -50%);
 
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* glow */
-
-.earth-glow {
-    position: absolute;
-
-    width: 90%;
-    height: 90%;
-
-    border-radius: 50%;
-
-    background: #8ccf63;
-
-    filter: blur(100px);
-
-    opacity: 0.08;
-
-    animation: glowPulse 5s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-
-    0%,
-    100% {
-        transform: scale(0.9);
-        opacity: 0.05;
-    }
-
-    50% {
-        transform: scale(1.08);
-        opacity: 0.12;
-    }
-
-}
-
-
-/* ========================================
-   EARTH
-======================================== */
-
-.earth {
-    position: relative;
-
-    width: 68%;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-
     overflow: hidden;
 
+    border: 1px solid rgba(255,255,255,0.16);
+
+    background: #050705;
+
     box-shadow:
-        0 0 50px rgba(120, 190, 130, 0.15),
-        0 0 120px rgba(120, 190, 130, 0.08);
-
-    animation: earthFloat 6s ease-in-out infinite;
-
-    z-index: 3;
+        0 40px 100px rgba(0,0,0,0.55),
+        0 0 80px rgba(125,220,138,0.04);
 }
 
-.earth::after {
-    content: "";
 
-    position: absolute;
+/* VIDEO */
 
-    inset: 0;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,0.7),
-            transparent 45%,
-            rgba(140,207,99,0.05)
-        );
-
-    pointer-events: none;
-}
-
-.earth img {
+.showcase-video {
     width: 100%;
     height: 100%;
 
@@ -261,68 +295,114 @@ body {
 
     display: block;
 
-    filter:
-        brightness(0.7)
-        saturate(0.8)
-        contrast(1.1);
+    filter: saturate(0.8) contrast(1.05);
 
-    transition:
-        transform 1s ease,
-        filter 0.8s ease;
+    transition: transform 1s ease;
 }
 
-.earth:hover img {
-    transform: scale(1.08);
-
-    filter:
-        brightness(0.85)
-        saturate(1)
-        contrast(1.1);
-}
-
-@keyframes earthFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
+.video-container:hover .showcase-video {
+    transform: scale(1.025);
 }
 
 
 /* ========================================
-   ORBITS
+   VIDEO OVERLAY
 ======================================== */
 
-.orbit {
+.video-overlay {
     position: absolute;
 
-    border: 1px solid rgba(140,207,99,0.18);
+    inset: 0;
 
-    border-radius: 50%;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.15),
+            transparent 40%,
+            rgba(0,0,0,0.5)
+        );
 
     pointer-events: none;
 }
 
-.orbit-one {
-    width: 82%;
-    height: 34%;
 
-    transform: rotate(-25deg);
+/* ========================================
+   VIDEO LABEL
+======================================== */
+
+.video-label {
+    position: absolute;
+
+    top: 22px;
+    left: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,0.8);
 }
 
-.orbit-two {
-    width: 95%;
-    height: 45%;
+.live-dot {
+    width: 6px;
+    height: 6px;
 
-    transform: rotate(30deg);
+    border-radius: 50%;
 
-    border-color:
-        rgba(255,255,255,0.06);
+    background: #7ddc8a;
+
+    box-shadow: 0 0 12px #7ddc8a;
+}
+
+
+/* ========================================
+   PLAY BUTTON
+======================================== */
+
+.play-button {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 76px;
+    height: 76px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.55);
+
+    background: rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(8px);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.35s;
+}
+
+.play-button:hover {
+    background: #7ddc8a;
+
+    color: #071008;
+
+    border-color: #7ddc8a;
+
+    transform: translate(-50%, -50%) scale(1.08);
 }
 
 
@@ -333,53 +413,65 @@ body {
 .showcase-title {
     position: absolute;
 
-    left: 5%;
-    bottom: 17%;
+    left: 5vw;
+    bottom: 11vh;
+
+    width: min(470px, 40vw);
 
     z-index: 10;
 
     pointer-events: none;
 }
 
-.title-small {
-    display: block;
+.eyebrow {
+    margin-bottom: 15px;
 
-    color: #7e8980;
+    font-size: 10px;
 
-    font-size: 9px;
+    letter-spacing: 3px;
 
-    letter-spacing: 4px;
-
-    margin-bottom: 18px;
+    color: #7ddc8a;
 }
 
 .showcase-title h1 {
     font-family: "Space Grotesk", sans-serif;
 
-    font-size: clamp(48px, 7vw, 100px);
+    font-size: clamp(34px, 4.3vw, 68px);
 
-    line-height: 0.88;
+    line-height: 0.9;
 
-    letter-spacing: -5px;
+    letter-spacing: -2px;
 
     font-weight: 600;
 }
 
 .showcase-title h1 span {
-    color: #8ccf63;
+    color: #7ddc8a;
+}
+
+.description {
+    margin-top: 22px;
+
+    max-width: 390px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color: #aab1aa;
 }
 
 
 /* ========================================
-   BOTTOM BAR
+   BOTTOM
 ======================================== */
 
 .showcase-bottom {
     position: absolute;
 
-    left: 5%;
-    right: 5%;
-    bottom: 35px;
+    bottom: 4vh;
+    right: 5vw;
+    left: 5vw;
 
     display: flex;
 
@@ -387,76 +479,54 @@ body {
 
     justify-content: space-between;
 
-    z-index: 30;
+    z-index: 20;
 }
 
 
 /* ========================================
-   COUNTER
+   PROGRESS
 ======================================== */
 
-.showcase-counter {
+.progress {
     display: flex;
 
     align-items: center;
 
-    gap: 12px;
+    gap: 14px;
 
-    color: #717a72;
+    font-family: "Space Grotesk", sans-serif;
 
     font-size: 10px;
 
-    letter-spacing: 2px;
+    color: #777f78;
+
+    letter-spacing: 1px;
 }
 
-.showcase-counter #current {
-    color: #8ccf63;
+.progress span:first-child {
+    color: #7ddc8a;
 }
 
-.line {
-    width: 80px;
+.progress-line {
+    width: 150px;
+    height: 1px;
+
+    background: rgba(255,255,255,0.15);
+
+    position: relative;
+}
+
+.progress-line div {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 30%;
 
     height: 1px;
 
-    background: #303830;
-}
-
-
-/* ========================================
-   TOPICS
-======================================== */
-
-.showcase-topics {
-    display: flex;
-
-    align-items: center;
-
-    gap: 25px;
-}
-
-.topic {
-    border: none;
-
-    background: transparent;
-
-    color: #59635b;
-
-    font-family: "Inter", sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    padding: 5px 0;
-
-    transition: 0.3s ease;
-}
-
-.topic:hover,
-.topic.active {
-    color: #f1f4ef;
+    background: #7ddc8a;
 }
 
 
@@ -469,39 +539,31 @@ body {
 
     align-items: center;
 
-    gap: 15px;
+    gap: 18px;
 
-    border: 1px solid rgba(140,207,99,0.35);
+    font-family: "Space Grotesk", sans-serif;
 
-    background: transparent;
-
-    color: #8ccf63;
-
-    padding: 13px 18px;
-
-    font-size: 9px;
+    font-size: 11px;
 
     letter-spacing: 2px;
 
-    cursor: pointer;
-
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .next-button span {
-    font-size: 16px;
+    font-size: 20px;
 
-    transition: 0.3s ease;
+    color: #7ddc8a;
+
+    transition: 0.3s;
 }
 
 .next-button:hover {
-    background: #8ccf63;
-
-    color: #061006;
+    color: #7ddc8a;
 }
 
 .next-button:hover span {
-    transform: translateX(5px);
+    transform: translateX(7px);
 }
 
 
@@ -511,24 +573,20 @@ body {
 
 @media (max-width: 900px) {
 
-    .earth-stage {
-        width: 65vw;
+    .video-container {
+        width: 82vw;
+        height: 55vh;
     }
 
     .showcase-title {
-        bottom: 18%;
+        left: 7vw;
+        bottom: 12vh;
+
+        width: 360px;
     }
 
     .showcase-title h1 {
-        font-size: clamp(45px, 9vw, 75px);
-    }
-
-    .showcase-topics {
-        gap: 12px;
-    }
-
-    .topic {
-        font-size: 8px;
+        font-size: clamp(32px, 6vw, 52px);
     }
 
 }
@@ -538,133 +596,112 @@ body {
    MOBILE
 ======================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
     body {
         overflow: hidden;
     }
 
-    .showcase {
-        min-height: 100svh;
-        height: 100svh;
+    nav {
+        height: 75px;
+
+        padding: 0 6vw;
     }
 
-    .showcase-nav {
-        padding: 22px 6%;
-    }
-
-    .nav-logo {
+    .logo {
         font-size: 16px;
     }
 
-    .nav-number {
-        font-size: 7px;
-        letter-spacing: 2px;
+    .logo img {
+        width: 27px;
+        height: 27px;
     }
 
-    .showcase-label {
-        top: 95px;
-        left: 6%;
-
-        font-size: 7px;
-
-        letter-spacing: 2.5px;
+    .page-number {
+        display: none;
     }
 
-    .earth-stage {
-        width: 105vw;
 
-        top: 43%;
+    .showcase {
+        min-height: 600px;
     }
 
-    .earth {
-        width: 63%;
-    }
 
-    .showcase-title {
-        left: 6%;
+    .video-container {
+        width: 88vw;
 
-        bottom: 22%;
+        height: 48vh;
 
-        right: 6%;
-    }
-
-    .title-small {
-        font-size: 7px;
-
-        letter-spacing: 3px;
-
-        margin-bottom: 12px;
-    }
-
-    .showcase-title h1 {
-        font-size: clamp(42px, 13vw, 65px);
-
-        letter-spacing: -3px;
-    }
-
-    .showcase-bottom {
-        left: 6%;
-        right: 6%;
-
-        bottom: 20px;
-
-        flex-wrap: wrap;
-
-        gap: 15px;
-    }
-
-    .showcase-topics {
-        order: 3;
-
-        width: 100%;
-
-        justify-content: center;
-
-        gap: 18px;
-    }
-
-    .topic {
-        font-size: 7px;
-    }
-
-    .line {
-        width: 45px;
-    }
-
-    .next-button {
-        padding: 10px 13px;
-
-        font-size: 8px;
-    }
-
-}
-
-
-/* ========================================
-   SMALL MOBILE
-======================================== */
-
-@media (max-width: 400px) {
-
-    .earth-stage {
         top: 40%;
     }
 
-    .showcase-title {
-        bottom: 24%;
+
+    .play-button {
+        width: 60px;
+        height: 60px;
     }
+
+
+    .showcase-title {
+        left: 6vw;
+
+        bottom: 12vh;
+
+        width: 88vw;
+    }
+
 
     .showcase-title h1 {
-        font-size: 39px;
+        font-size: clamp(30px, 9vw, 46px);
+
+        letter-spacing: -1.5px;
     }
 
-    .showcase-topics {
-        gap: 10px;
+
+    .description {
+        display: none;
     }
 
-    .topic {
-        font-size: 6px;
+
+    .eyebrow {
+        font-size: 9px;
+    }
+
+
+    .showcase-bottom {
+        bottom: 3vh;
+
+        left: 6vw;
+        right: 6vw;
+    }
+
+
+    .progress-line {
+        width: 80px;
+    }
+
+
+    .next-button {
+        font-size: 9px;
+    }
+
+
+    .background-text {
+        font-size: 45vw;
+
+        bottom: 0;
+    }
+
+
+    .menu-panel {
+        width: 100vw;
+
+        padding: 110px 35px;
+    }
+
+    .menu-panel a {
+        font-size: 25px;
     }
 
 }
+```
