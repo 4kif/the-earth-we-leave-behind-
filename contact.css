@@ -1,232 +1,1108 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =====================================================
+   GET IN TOUCH PAGE
+   THE EARTH WE LEAVE BEHIND
+===================================================== */
 
-<head>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <meta charset="UTF-8">
+html {
+    scroll-behavior: smooth;
+}
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+body {
+    font-family: "Inter", sans-serif;
+    background: #080b09;
+    color: #f1f4ef;
+    overflow-x: hidden;
+}
 
-    <title>Get In Touch — The Earth We Leave Behind</title>
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    <link rel="stylesheet" href="contact.css">
+button,
+input,
+textarea {
+    font-family: inherit;
+}
 
-</head>
 
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
-<body>
+.navbar {
+    position: fixed;
 
+    top: 0;
+    left: 0;
 
-<section class="contact-page">
+    width: 100%;
+    height: 80px;
 
+    padding: 0 8%;
 
-    <!-- LABEL -->
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    <div class="contact-label">
-        05 — GET IN TOUCH
-    </div>
+    z-index: 1000;
 
+    background: rgba(5, 8, 6, 0.72);
 
-    <!-- LEFT -->
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 
-    <div class="contact-main">
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-        <h1>
-            LET'S LEAVE A<br>
-            <span>BETTER WORLD</span><br>
-            BEHIND.
-        </h1>
 
+/* LOGO */
 
-        <div class="contact-divider"></div>
+.logo {
+    font-family: "Space Grotesk", sans-serif;
 
+    font-size: 13px;
 
-        <h2>
-            THE STORY<br>
-            DOESN'T END HERE.
-        </h2>
+    line-height: 1.15;
 
+    letter-spacing: 2px;
 
-        <p class="contact-description">
-            Have an idea, question, or want to contribute
-            to the conversation? We'd love to hear from you.
-        </p>
+    font-weight: 700;
 
+    color: #f1f4ef;
 
-        <!-- FORM -->
+    transition: 0.3s ease;
+}
 
-        <form class="contact-form" id="contactForm">
+.logo:hover {
+    color: #8ccf63;
+}
 
 
-            <div class="form-row">
+/* BACK BUTTON */
 
+.back-btn {
+    padding: 11px 18px;
 
-                <div class="form-group">
+    border: 1px solid rgba(255,255,255,0.25);
 
-                    <label for="name">
-                        YOUR NAME
-                    </label>
+    color: #c5ccc5;
 
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Enter your name"
-                        required
-                    >
+    font-size: 10px;
 
-                </div>
+    letter-spacing: 2px;
 
+    transition: 0.3s ease;
+}
 
-                <div class="form-group">
+.back-btn:hover {
+    color: #071006;
 
-                    <label for="email">
-                        YOUR EMAIL
-                    </label>
+    background: #8ccf63;
 
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Enter your email"
-                        required
-                    >
+    border-color: #8ccf63;
+}
 
-                </div>
 
+/* =====================================================
+   MAIN PAGE
+===================================================== */
 
-            </div>
+.contact-page {
+    width: 100%;
 
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(140, 207, 99, 0.08),
+            transparent 28%
+        ),
+        #080b09;
+}
 
-            <div class="form-group message-group">
 
-                <label for="message">
-                    YOUR MESSAGE
-                </label>
+/* =====================================================
+   HERO
+===================================================== */
 
-                <textarea
-                    id="message"
-                    placeholder="Tell us something..."
-                    required
-                ></textarea>
+.contact-hero {
+    min-height: 72vh;
 
-            </div>
+    padding: 180px 8% 90px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-            <button
-                type="submit"
-                class="submit-btn"
-            >
+    position: relative;
+}
 
-                <span>
-                    SEND MESSAGE
-                </span>
 
-                <span class="submit-arrow">
-                    ↗
-                </span>
+/* LABEL */
 
-            </button>
+.hero-label {
+    color: #8ccf63;
 
+    font-size: 10px;
 
-        </form>
+    letter-spacing: 4px;
 
-    </div>
+    margin-bottom: 30px;
+}
 
 
-    <!-- RIGHT -->
+/* TITLE */
 
-    <div class="contact-connect">
+.contact-hero h1 {
+    font-family: "Space Grotesk", sans-serif;
 
+    font-size: clamp(65px, 8vw, 125px);
 
-        <div class="connect-label">
-            CONNECT
-        </div>
+    line-height: 0.84;
 
+    letter-spacing: -6px;
 
-        <h2>
-            WITH US.
-        </h2>
+    font-weight: 600;
 
+    max-width: 1100px;
+}
 
-        <div class="social-links">
+.contact-hero h1 span {
+    color: #8ccf63;
+}
 
 
-            <a
-                href="#"
-                class="social-link"
-            >
+/* DESCRIPTION */
 
-                <span>INSTAGRAM</span>
+.hero-description {
+    max-width: 560px;
 
-                <span class="social-arrow">↗</span>
+    margin-top: 38px;
 
-            </a>
+    color: #9da49d;
 
+    font-size: 14px;
 
-            <a
-                href="#"
-                class="social-link"
-            >
+    line-height: 1.8;
+}
 
-                <span>GITHUB</span>
 
-                <span class="social-arrow">↗</span>
+/* =====================================================
+   MAIN CONTACT GRID
+===================================================== */
 
-            </a>
+.contact-grid {
+    width: 84%;
 
+    max-width: 1400px;
 
-            <a
-                href="mailto:your@email.com"
-                class="social-link"
-            >
+    margin: 0 auto;
 
-                <span>EMAIL</span>
+    padding: 85px 0 130px;
 
-                <span class="social-arrow">↗</span>
+    display: grid;
 
-            </a>
+    grid-template-columns: 1.35fr 0.65fr;
 
+    gap: 100px;
 
-        </div>
+    border-top: 1px solid rgba(255,255,255,0.14);
+}
 
 
-        <div class="connect-note">
+/* =====================================================
+   SECTION NUMBER
+===================================================== */
 
-            <span class="connect-note-title">
-                STAY CONNECTED
-            </span>
+.section-number {
+    color: #8ccf63;
 
-            <p>
-                Every conversation starts with
-                a single message.
-            </p>
+    font-size: 10px;
 
-        </div>
+    letter-spacing: 3px;
 
+    margin-bottom: 22px;
+}
 
-    </div>
 
+/* =====================================================
+   FORM AREA
+===================================================== */
 
-    <!-- BOTTOM -->
+.form-area h2,
+.connect-area h2 {
+    font-family: "Space Grotesk", sans-serif;
 
-    <div class="contact-bottom">
+    font-size: clamp(38px, 4vw, 62px);
 
-        <span>
-            THE EARTH WE LEAVE BEHIND
-        </span>
+    line-height: 0.9;
 
-        <span>
-            © 2026 — AKIF & FARIS
-        </span>
+    letter-spacing: -3px;
 
-    </div>
+    font-weight: 500;
 
+    margin-bottom: 55px;
+}
 
-</section>
 
+/* FORM */
 
-<script src="contact.js"></script>
+#contactForm {
+    width: 100%;
 
-</body>
+    max-width: 760px;
+}
 
-</html>
+
+/* FORM GROUP */
+
+.form-group {
+    margin-bottom: 32px;
+}
+
+
+/* LABEL */
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #8f9990;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
+}
+
+
+/* INPUT + TEXTAREA */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+
+    color: #f1f4ef;
+
+    padding: 15px 0;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.3s ease,
+        padding 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #596159;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #8ccf63;
+
+    padding-left: 8px;
+}
+
+
+/* TEXTAREA */
+
+.form-group textarea {
+    min-height: 130px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   TOPIC BUTTONS
+===================================================== */
+
+.topic-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+
+.topic-btn {
+    padding: 11px 16px;
+
+    background: transparent;
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    color: #929b92;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.topic-btn:hover {
+    border-color: #8ccf63;
+
+    color: #8ccf63;
+
+    transform: translateY(-2px);
+}
+
+
+.topic-btn.active {
+    background: #8ccf63;
+
+    border-color: #8ccf63;
+
+    color: #071006;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.submit-btn {
+    margin-top: 15px;
+
+    width: 100%;
+
+    max-width: 260px;
+
+    padding: 18px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #8ccf63;
+
+    border: 1px solid #8ccf63;
+
+    color: #071006;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.submit-btn .arrow {
+    font-size: 19px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.submit-btn:hover {
+    background: transparent;
+
+    color: #8ccf63;
+
+    transform: translateY(-3px);
+}
+
+
+.submit-btn:hover .arrow {
+    transform: translate(5px, -5px);
+}
+
+
+/* FORM MESSAGE */
+
+.form-message {
+    margin-top: 18px;
+
+    font-size: 11px;
+
+    color: #8ccf63;
+
+    min-height: 18px;
+}
+
+
+/* =====================================================
+   CONNECT AREA
+===================================================== */
+
+.connect-area {
+    padding-left: 35px;
+
+    border-left: 1px solid rgba(255,255,255,0.13);
+}
+
+
+.connect-area h2 {
+    margin-bottom: 45px;
+}
+
+
+/* =====================================================
+   SOCIAL LINKS
+===================================================== */
+
+.social-links {
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+
+.social-link {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 22px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+
+    color: #e7ebe6;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+
+.social-link span:last-child {
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.social-link:hover {
+    color: #8ccf63;
+
+    padding-left: 10px;
+}
+
+
+.social-link:hover span:last-child {
+    transform: translate(5px, -5px);
+}
+
+
+/* =====================================================
+   CONNECT NOTE
+===================================================== */
+
+.connect-note {
+    margin-top: 65px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.13);
+}
+
+
+.connect-note span {
+    display: block;
+
+    color: #8ccf63;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.connect-note p {
+    max-width: 280px;
+
+    color: #737d74;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   CLOSING SECTION
+===================================================== */
+
+.closing-section {
+    min-height: 90vh;
+
+    padding: 130px 8%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(4,7,5,0.82),
+            rgba(4,7,5,0.96)
+        ),
+        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2400&q=90");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* CLOSING LABEL */
+
+.closing-label {
+    color: #8ccf63;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 35px;
+}
+
+
+/* CLOSING TITLE */
+
+.closing-section h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(50px, 7vw, 105px);
+
+    line-height: 0.88;
+
+    letter-spacing: -5px;
+
+    font-weight: 500;
+}
+
+
+.closing-section h2 span {
+    color: #8ccf63;
+}
+
+
+/* CLOSING CREDIT */
+
+.closing-section > p {
+    margin-top: 45px;
+
+    color: #727b73;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    width: 100%;
+
+    padding: 55px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 30px;
+
+    background: #050705;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    color: #737b74;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+
+    letter-spacing: 2px;
+}
+
+
+.footer-left {
+    color: #f1f4ef;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+.footer-center {
+    text-align: center;
+}
+
+
+.footer-right {
+    text-align: right;
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1440px) {
+
+    .navbar {
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+
+    .contact-hero {
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+
+    .contact-grid {
+        width: 82%;
+    }
+
+    .closing-section {
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+
+    footer {
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 0 6%;
+    }
+
+
+    .contact-hero {
+        padding: 150px 7% 80px;
+    }
+
+
+    .contact-hero h1 {
+        font-size: clamp(55px, 9vw, 90px);
+
+        letter-spacing: -4px;
+    }
+
+
+    .contact-grid {
+        width: 86%;
+
+        grid-template-columns: 1fr;
+
+        gap: 80px;
+    }
+
+
+    .connect-area {
+        padding-left: 0;
+
+        padding-top: 60px;
+
+        border-left: none;
+
+        border-top: 1px solid rgba(255,255,255,0.13);
+    }
+
+
+    .social-links {
+        max-width: 700px;
+    }
+
+
+    .connect-note {
+        max-width: 700px;
+    }
+
+
+    .closing-section {
+        padding: 110px 7%;
+    }
+
+
+    footer {
+        padding: 50px 7%;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        min-width: 320px;
+    }
+
+
+    /* NAV */
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 6%;
+    }
+
+
+    .logo {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .back-btn {
+        padding: 9px 13px;
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* HERO */
+
+    .contact-hero {
+        min-height: 72vh;
+
+        padding: 130px 6% 65px;
+    }
+
+
+    .hero-label {
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .contact-hero h1 {
+        font-size: clamp(43px, 12vw, 65px);
+
+        line-height: 0.88;
+
+        letter-spacing: -3px;
+    }
+
+
+    .hero-description {
+        max-width: 340px;
+
+        margin-top: 28px;
+
+        font-size: 11px;
+
+        line-height: 1.7;
+    }
+
+
+    /* CONTACT GRID */
+
+    .contact-grid {
+        width: 88%;
+
+        padding: 70px 0 90px;
+
+        gap: 65px;
+    }
+
+
+    .section-number {
+        font-size: 8px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 18px;
+    }
+
+
+    /* HEADINGS */
+
+    .form-area h2,
+    .connect-area h2 {
+        font-size: 36px;
+
+        line-height: 0.92;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 40px;
+    }
+
+
+    /* FORM */
+
+    .form-group {
+        margin-bottom: 27px;
+    }
+
+
+    .form-group label {
+        font-size: 8px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 9px;
+    }
+
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 12px;
+
+        padding: 13px 0;
+    }
+
+
+    .form-group textarea {
+        min-height: 105px;
+    }
+
+
+    /* TOPICS */
+
+    .topic-buttons {
+        gap: 7px;
+    }
+
+
+    .topic-btn {
+        padding: 9px 11px;
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* SUBMIT */
+
+    .submit-btn {
+        max-width: 100%;
+
+        padding: 16px 18px;
+
+        font-size: 9px;
+    }
+
+
+    .submit-btn .arrow {
+        font-size: 17px;
+    }
+
+
+    /* CONNECT */
+
+    .connect-area {
+        padding-top: 50px;
+    }
+
+
+    .social-link {
+        padding: 18px 0;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .social-link span:last-child {
+        font-size: 18px;
+    }
+
+
+    .connect-note {
+        margin-top: 45px;
+
+        padding-top: 20px;
+    }
+
+
+    .connect-note span {
+        font-size: 8px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .connect-note p {
+        font-size: 10px;
+
+        max-width: 250px;
+    }
+
+
+    /* CLOSING */
+
+    .closing-section {
+        min-height: 85vh;
+
+        padding: 90px 6%;
+
+        background-attachment: scroll;
+    }
+
+
+    .closing-label {
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .closing-section h2 {
+        font-size: clamp(42px, 11vw, 65px);
+
+        line-height: 0.9;
+
+        letter-spacing: -3px;
+    }
+
+
+    .closing-section > p {
+        margin-top: 32px;
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 40px 6%;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .footer-center,
+    .footer-right {
+        text-align: left;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .contact-hero {
+        padding-top: 115px;
+    }
+
+
+    .contact-hero h1 {
+        font-size: 41px;
+
+        letter-spacing: -2.5px;
+    }
+
+
+    .hero-description {
+        font-size: 10px;
+    }
+
+
+    .form-area h2,
+    .connect-area h2 {
+        font-size: 32px;
+    }
+
+
+    .topic-btn {
+        font-size: 6.5px;
+
+        padding: 8px 9px;
+    }
+
+
+    .closing-section h2 {
+        font-size: 40px;
+    }
+
+}
