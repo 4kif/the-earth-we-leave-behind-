@@ -451,33 +451,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-```javascript
-// =========================
-// HAMBURGER MENU
-// =========================
 
-const menuToggle = document.getElementById("menuToggle");
-const menuPanel = document.getElementById("menuPanel");
-
-menuToggle.addEventListener("click", () => {
-
-    menuToggle.classList.toggle("active");
-    menuPanel.classList.toggle("active");
-
-});
-
-
-// Tutup menu bila klik link
-
-document.querySelectorAll(".menu-panel a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        menuToggle.classList.remove("active");
-        menuPanel.classList.remove("active");
-
-    });
-
-});
-```
 
