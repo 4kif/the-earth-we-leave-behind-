@@ -204,7 +204,9 @@ const counterObserver =
     );
 
 
-counterObserver.observe(dataSection);
+if (dataSection) {
+    counterObserver.observe(dataSection);
+}
 
 
 /* =========================
