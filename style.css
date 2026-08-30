@@ -2738,7 +2738,7 @@ min-height: 100vh;
 width: 100%;
 
 ```
-padding: 110px 8% 50px;
+padding: 140px 8% 70px;
 
 background: #080b09;
 
@@ -2753,7 +2753,12 @@ overflow: hidden;
 
 .contact-content {
 width: 100%;
-max-width: 1100px;
+max-width: 1400px;
+
+```
+margin: 0 auto;
+```
+
 }
 
 /* =========================
@@ -2764,29 +2769,29 @@ LABEL
 color: #8ccf63;
 
 ```
-font-size: 10px;
-letter-spacing: 3px;
+font-size: 11px;
+letter-spacing: 4px;
 
-margin-bottom: 22px;
+margin-bottom: 30px;
 ```
 
 }
 
 /* =========================
-MAIN TITLE
+TITLE
 ========================= */
 
 .contact-content h1 {
 font-family: "Space Grotesk", sans-serif;
 
 ```
-font-size: clamp(55px, 7.5vw, 110px);
+font-size: clamp(70px, 8vw, 125px);
 
-line-height: 0.88;
+line-height: 0.86;
 
-letter-spacing: -5px;
+letter-spacing: -6px;
 
-margin-bottom: 30px;
+margin-bottom: 35px;
 ```
 
 }
@@ -2803,11 +2808,11 @@ DESCRIPTION
 color: #9da49d;
 
 ```
-font-size: 15px;
+font-size: 17px;
 
 line-height: 1.7;
 
-margin-bottom: 42px;
+margin-bottom: 50px;
 ```
 
 }
@@ -2817,13 +2822,13 @@ SOCIAL BOX
 ========================= */
 
 .social-box {
-width: 430px;
+width: 520px;
 max-width: 100%;
 
 ```
-border-top: 1px solid rgba(255,255,255,0.15);
+border-top: 1px solid rgba(255,255,255,0.18);
 
-padding-top: 18px;
+padding-top: 22px;
 ```
 
 }
@@ -2832,11 +2837,11 @@ padding-top: 18px;
 color: #8ccf63;
 
 ```
-font-size: 10px;
+font-size: 11px;
 
-letter-spacing: 3px;
+letter-spacing: 4px;
 
-margin-bottom: 5px;
+margin-bottom: 8px;
 ```
 
 }
@@ -2854,15 +2859,15 @@ align-items: center;
 
 width: 100%;
 
-padding: 19px 0;
+padding: 23px 0;
 
 border-bottom: 1px solid rgba(255,255,255,0.12);
 
 color: #f1f4ef;
 
-font-size: 12px;
+font-size: 13px;
 
-letter-spacing: 2px;
+letter-spacing: 2.5px;
 
 transition: all 0.3s ease;
 ```
@@ -2873,13 +2878,40 @@ transition: all 0.3s ease;
 color: #8ccf63;
 
 ```
-padding-left: 10px;
+padding-left: 15px;
 ```
 
 }
 
 .social-link span:last-child {
-font-size: 18px;
+font-size: 20px;
+}
+
+/* =====================================================
+LARGE DESKTOP
+1440px+
+===================================================== */
+
+@media (min-width: 1440px) {
+
+```
+.contact-page {
+    padding: 150px 9% 80px;
+}
+
+.contact-content h1 {
+    font-size: 125px;
+}
+
+.contact-intro {
+    font-size: 18px;
+}
+
+.social-box {
+    width: 560px;
+}
+```
+
 }
 
 /* =====================================================
@@ -2891,23 +2923,21 @@ TABLET
 
 ```
 .contact-page {
-    padding: 100px 7% 45px;
+    padding: 120px 7% 60px;
 }
 
 .contact-content h1 {
-    font-size: clamp(55px, 8vw, 85px);
+    font-size: clamp(60px, 9vw, 90px);
 
     letter-spacing: -4px;
 }
 
 .contact-intro {
-    font-size: 14px;
-
-    margin-bottom: 38px;
+    font-size: 15px;
 }
 
 .social-box {
-    width: 390px;
+    width: 450px;
 }
 ```
 
@@ -2924,14 +2954,13 @@ MOBILE
 .contact-page {
     min-height: 100svh;
 
-    padding: 90px 6% 35px;
+    padding: 100px 6% 40px;
 
     align-items: flex-start;
 }
 
 .contact-content h1 {
-
-    font-size: clamp(48px, 13vw, 70px);
+    font-size: clamp(48px, 13vw, 72px);
 
     line-height: 0.9;
 
@@ -2943,8 +2972,6 @@ MOBILE
 .contact-intro {
     font-size: 14px;
 
-    line-height: 1.6;
-
     margin-bottom: 35px;
 }
 
@@ -2953,13 +2980,9 @@ MOBILE
 }
 
 .social-link {
-    padding: 17px 0;
+    padding: 18px 0;
 
     font-size: 11px;
-}
-
-.social-link:hover {
-    padding-left: 5px;
 }
 ```
 
