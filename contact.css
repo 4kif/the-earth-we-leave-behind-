@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Get In Touch — The Earth We Leave Behind</title>
+
+    <link rel="stylesheet" href="contact.css">
+
+</head>
+
+
+<body>
+
+
+<section class="contact-page">
+
+
+    <!-- LABEL -->
+
+    <div class="contact-label">
+        05 — GET IN TOUCH
+    </div>
+
+
+    <!-- LEFT -->
+
+    <div class="contact-main">
+
+        <h1>
+            LET'S LEAVE A<br>
+            <span>BETTER WORLD</span><br>
+            BEHIND.
+        </h1>
+
+
+        <div class="contact-divider"></div>
+
+
+        <h2>
+            THE STORY<br>
+            DOESN'T END HERE.
+        </h2>
+
+
+        <p class="contact-description">
+            Have an idea, question, or want to contribute
+            to the conversation? We'd love to hear from you.
+        </p>
+
+
+        <!-- FORM -->
+
+        <form class="contact-form" id="contactForm">
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label for="name">
+                        YOUR NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        YOUR EMAIL
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-group message-group">
+
+                <label for="message">
+                    YOUR MESSAGE
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Tell us something..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+
+                <span>
+                    SEND MESSAGE
+                </span>
+
+                <span class="submit-arrow">
+                    ↗
+                </span>
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+    <!-- RIGHT -->
+
+    <div class="contact-connect">
+
+
+        <div class="connect-label">
+            CONNECT
+        </div>
+
+
+        <h2>
+            WITH US.
+        </h2>
+
+
+        <div class="social-links">
+
+
+            <a
+                href="#"
+                class="social-link"
+            >
+
+                <span>INSTAGRAM</span>
+
+                <span class="social-arrow">↗</span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="social-link"
+            >
+
+                <span>GITHUB</span>
+
+                <span class="social-arrow">↗</span>
+
+            </a>
+
+
+            <a
+                href="mailto:your@email.com"
+                class="social-link"
+            >
+
+                <span>EMAIL</span>
+
+                <span class="social-arrow">↗</span>
+
+            </a>
+
+
+        </div>
+
+
+        <div class="connect-note">
+
+            <span class="connect-note-title">
+                STAY CONNECTED
+            </span>
+
+            <p>
+                Every conversation starts with
+                a single message.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- BOTTOM -->
+
+    <div class="contact-bottom">
+
+        <span>
+            THE EARTH WE LEAVE BEHIND
+        </span>
+
+        <span>
+            © 2026 — AKIF & FARIS
+        </span>
+
+    </div>
+
+
+</section>
+
+
+<script src="contact.js"></script>
+
+</body>
+
+</html>
