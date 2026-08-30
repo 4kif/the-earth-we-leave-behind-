@@ -1,106 +1,306 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Connect — The Earth We Leave Behind</title>
+    <title>Get In Touch — The Earth We Leave Behind</title>
 
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-```
-
+    <link rel="stylesheet" href="get-in-touch.css">
 </head>
 
 <body>
 
-```
-<section class="contact-final">
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
-    <!-- LEFT SIDE -->
+    <header class="navbar">
 
-    <div class="contact-left">
-
-        <p class="contact-label">
-            05 — CONNECT
-        </p>
-
-        <h1>
-            THE STORY<br>
-            DOESN'T END<br>
-            <span>HERE.</span>
-        </h1>
-
-        <div class="contact-line"></div>
-
-        <h2>
-            WHAT WE LEAVE<br>
-            BEHIND MATTERS.
-        </h2>
-
-        <p class="contact-description">
-            Follow the conversation.<br>
-            See the world differently.<br>
-            Start with one choice.
-        </p>
-
-    </div>
-
-
-    <!-- RIGHT SIDE -->
-
-    <div class="contact-social">
-
-        <p class="social-heading">
-            CONNECT WITH US
-        </p>
-
-        <a
-            href="YOUR_INSTAGRAM_LINK"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-item"
-        >
-            <span>
-                INSTAGRAM
-            </span>
-
-            <span class="social-arrow">
-                ↗
-            </span>
+        <a href="index.html" class="logo">
+            THE EARTH WE<br>
+            LEAVE BEHIND
         </a>
 
-
-        <a
-            href="YOUR_TIKTOK_LINK"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-item"
-        >
-            <span>
-                TIKTOK
-            </span>
-
-            <span class="social-arrow">
-                ↗
-            </span>
+        <a href="index.html" class="back-btn">
+            ← BACK
         </a>
 
-    </div>
+    </header>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         GET IN TOUCH
+    ========================= -->
 
-    <p class="contact-footer">
-        THE FUTURE IS STILL OURS TO SHAPE.
-    </p>
+    <main class="contact-page">
 
-</section>
-```
+        <!-- HERO -->
+
+        <section class="contact-hero">
+
+            <div class="hero-label">
+                05 — GET IN TOUCH
+            </div>
+
+            <h1>
+                LET'S LEAVE A<br>
+                <span>BETTER WORLD</span><br>
+                BEHIND.
+            </h1>
+
+            <p class="hero-description">
+                Have an idea, question, or want to contribute
+                to the conversation? We'd love to hear from you.
+            </p>
+
+        </section>
+
+
+        <!-- MAIN CONTACT AREA -->
+
+        <section class="contact-grid">
+
+
+            <!-- =========================
+                 CONTACT FORM
+            ========================= -->
+
+            <div class="form-area">
+
+                <div class="section-number">
+                    01
+                </div>
+
+                <h2>
+                    SEND US<br>
+                    A MESSAGE.
+                </h2>
+
+                <form id="contactForm">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            YOUR NAME
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            YOUR EMAIL
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            WHAT'S ON YOUR MIND?
+                        </label>
+
+                        <div class="topic-buttons">
+
+                            <button type="button" class="topic-btn active">
+                                GENERAL
+                            </button>
+
+                            <button type="button" class="topic-btn">
+                                FEEDBACK
+                            </button>
+
+                            <button type="button" class="topic-btn">
+                                COLLABORATION
+                            </button>
+
+                            <button type="button" class="topic-btn">
+                                IDEA
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            YOUR MESSAGE
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us something..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="submit-btn">
+
+                        <span>SEND MESSAGE</span>
+
+                        <span class="arrow">
+                            ↗
+                        </span>
+
+                    </button>
+
+                    <p id="formMessage" class="form-message"></p>
+
+                </form>
+
+            </div>
+
+
+            <!-- =========================
+                 CONNECT
+            ========================= -->
+
+            <aside class="connect-area">
+
+                <div class="section-number">
+                    02
+                </div>
+
+                <h2>
+                    CONNECT<br>
+                    WITH US.
+                </h2>
+
+
+                <div class="social-links">
+
+                    <a href="#" class="social-link">
+
+                        <span>INSTAGRAM</span>
+
+                        <span>↗</span>
+
+                    </a>
+
+
+                    <a href="#" class="social-link">
+
+                        <span>GITHUB</span>
+
+                        <span>↗</span>
+
+                    </a>
+
+
+                    <a href="mailto:your@email.com" class="social-link">
+
+                        <span>EMAIL</span>
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- MINI MESSAGE -->
+
+                <div class="connect-note">
+
+                    <span>STAY CONNECTED</span>
+
+                    <p>
+                        Every conversation starts with
+                        a single message.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- =========================
+             QUOTE
+        ========================= -->
+
+        <section class="closing-section">
+
+            <div class="closing-label">
+                THE STORY DOESN'T END HERE.
+            </div>
+
+            <h2>
+                THE FUTURE ISN'T<br>
+                SOMEWHERE WE GO.<br>
+                <span>IT'S SOMETHING<br>
+                WE CREATE.</span>
+            </h2>
+
+            <p>
+                — THE EARTH WE LEAVE BEHIND
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================= -->
+
+        <footer>
+
+            <div class="footer-left">
+
+                THE EARTH WE<br>
+                LEAVE BEHIND
+
+            </div>
+
+
+            <div class="footer-center">
+
+                CLIMATE<br>
+                PEOPLE<br>
+                FUTURE
+
+            </div>
+
+
+            <div class="footer-right">
+
+                © 2026<br>
+                CREATED BY<br>
+                AKIF & FARIS
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="get-in-touch.js"></script>
 
 </body>
 </html>
