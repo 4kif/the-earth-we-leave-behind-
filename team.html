@@ -17,9 +17,111 @@
 
 <body>
 
-    <!-- OUR TEAM -->
-    <!-- PASTE CODE TEAM KAU DEKAT SINI -->
+    <!-- =========================
+     OUR TEAM
+========================= -->
 
+<section class="team-section" id="our-team">
+
+    <div class="team-header">
+
+        <span>THE PEOPLE BEHIND IT</span>
+
+        <h2>
+            OUR <span>TEAM</span>
+        </h2>
+
+        <p>
+            Meet the people behind
+            The Earth We Leave Behind.
+        </p>
+
+    </div>
+
+
+    <div class="team-slider">
+
+        <!-- LEFT ARROW -->
+        <button class="team-btn prev" onclick="changeTeam(-1)">
+            &#10094;
+        </button>
+
+
+        <!-- TEAM CARDS -->
+        <div class="team-track">
+
+            <!-- TEAM MEMBER 1 -->
+            <div class="team-card active">
+
+                <div class="team-image">
+                    <img src="akif.JPG" alt="Akif">
+                </div>
+
+                <div class="team-info">
+
+                    <h3>AKIF ZAQUAN</h3>
+
+                    <h4>WEB DEVELOPER</h4>
+
+                    <p>
+                        Responsible for developing and
+                        building the website experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- TEAM MEMBER 2 -->
+            <div class="team-card">
+
+                <div class="team-image">
+                    <img src="faris.JPG" alt="Faris Danial">
+                </div>
+
+                <div class="team-info">
+
+                    <h3>FARIS DANIAL</h3>
+
+                    <h4>DESIGNER</h4>
+
+                    <p>
+                        Responsible for the visual design,
+                        layout and creative direction.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT ARROW -->
+        <button class="team-btn next" onclick="changeTeam(1)">
+            &#10095;
+        </button>
+
+    </div>
+
+
+    <!-- SLIDER DOTS -->
+    <div class="team-dots">
+
+        <span
+            class="team-dot active-dot"
+            onclick="showTeam(0)">
+        </span>
+
+        <span
+            class="team-dot"
+            onclick="showTeam(1)">
+        </span>
+
+    </div>
+
+</section>
 
 </body>
 
